@@ -1,0 +1,45 @@
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.confirmation-details-container {
+  padding: 20px;
+}
+
+.attendees-container {
+  flex-grow: 2;
+}
+
+.attendee {
+  outline: 2px solid #ddd;
+}
+
+.spacing-right {
+  margin-right: 40px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+hr {
+  color: #ddd;
+  border: solid 1px #ddd;
+}
+
+hr.attendee-hr {
+  border-style: dashed;
+}
