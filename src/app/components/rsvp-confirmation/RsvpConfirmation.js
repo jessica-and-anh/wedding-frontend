@@ -30,7 +30,6 @@ export default class RsvpConfirmation extends Component {
           <RsvpHero isAnyoneAttending={isAnyoneAttending}/>
           <section className="rsvp-confirmation">
             <h1 className="text-center space-top-2 space-5">Here’s a summary of what you told us:</h1>
-
             <div className="flex">
               <div className="confirmation-details-container attendees-container">
                 <AttendeesList

@@ -67,3 +67,8 @@ p, span, a {
 .space-top-3 {
   margin-top: 25px;
 }
+
+a.styled-link {
+  color: rgb(68, 165, 201);
+  text-decoration: underline;
+}
