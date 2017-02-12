@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import Content from '../components/rsvp-confirmation';
+import Content from '../components/rsvp-confirmation/RsvpConfirmation';
 import { showRsvpPasscodeModal } from '../actions/show-rsvp-modal';
 
 const mapStateToProps = (state) => {
