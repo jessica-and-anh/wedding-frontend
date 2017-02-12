@@ -3,6 +3,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RsvpHero from '../rsvp-hero';
 import AttendeesList from './AttendeesList';
 import Lodging from './Lodging';
+import TipsToPrepare from './TipsToPrepare';
 import '../../../stylesheets/components/rsvp-confirmation.css';
 
 export default class RsvpConfirmation extends Component {
@@ -31,7 +32,7 @@ export default class RsvpConfirmation extends Component {
           <section className="rsvp-confirmation">
             <h1 className="text-center space-top-2 space-5">Here’s a summary of what you told us:</h1>
             <div className="flex">
-              <div className="confirmation-details-container attendees-container">
+              <div className="attendees-container">
                 <AttendeesList
                   subheader="ATTENDING"
                   users={guestsAttending}
@@ -60,6 +61,7 @@ export default class RsvpConfirmation extends Component {
           </section>
         </div>
         <hr className="space-top-3 space-3" />
+        <TipsToPrepare />
       </div>
     );
   }

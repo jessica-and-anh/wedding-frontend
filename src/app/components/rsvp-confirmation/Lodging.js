@@ -74,7 +74,7 @@ export default function Lodging({ userGroup }) {
   const requestedLodgingDays = Object.values(lodgingDays).filter((day) => { return day });
 
   return (
-    <div className="confirmation-details-container">
+    <div>
       <h2 className="space-2">REQUESTED ACCOMODATIONS</h2>
       <h1 className="space-3">{requestedLodgingDays.length} NIGHTS</h1>
       <Calendars
