@@ -33,14 +33,18 @@ function canShowRsvpContent(json, dispatch) {
   }
 }
 
-export const fetchRsvpGroup = (code) => {
+export const fetchRsvpGroup = (code, showModal = true) => {
   const FETCH_URL = apiUrl(`rsvp/show/${code}`);
 
   function fetchData(dispatch) {
     return fetch(FETCH_URL)
       .then(response => response.json())
       .then(json => dispatch(receiveRsvpGroup(json)))
-      .then(json => canShowRsvpContent(json, dispatch))
+      .then(json => {
+        if (showModal) {
+          canShowRsvpContent(json, dispatch)
+        }
+      })
       .catch(err => dispatch(errorRsvpGroup(err)));
   }
 

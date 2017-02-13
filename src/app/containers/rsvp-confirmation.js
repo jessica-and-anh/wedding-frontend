@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import { fetchRsvpGroup } from '../actions/rsvp-group';
 import Content from '../components/rsvp-confirmation/RsvpConfirmation';
 import { showRsvpPasscodeModal } from '../actions/show-rsvp-modal';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, routerProps) => {
   const {
     userGroup,
     users,
   } = state.rsvp;
 
   return {
+    code: routerProps.params.id,
     userGroup,
     users,
   };
@@ -17,6 +19,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    onLoadWithRsvpCode: (code) => {
+      dispatch(fetchRsvpGroup(code, false));
+    },
     onRsvpClick: (code) => {
       dispatch(showRsvpPasscodeModal());
     },

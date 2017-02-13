@@ -8,8 +8,10 @@ import '../../../stylesheets/components/rsvp-confirmation.css';
 
 export default class RsvpConfirmation extends Component {
   componentWillMount() {
-    const { users, onRouteToHomepage } = this.props;
-    if (users.length === 0) {
+    const { users, code, onLoadWithRsvpCode, onRouteToHomepage } = this.props;
+    if (code) {
+      onLoadWithRsvpCode(code);
+    } else if (users.length === 0) {
       onRouteToHomepage();
     }
   }
