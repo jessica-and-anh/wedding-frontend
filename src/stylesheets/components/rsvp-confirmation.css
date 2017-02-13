@@ -6,16 +6,17 @@
   flex-direction: row;
 }
 
+.flex-space-between {
+  justify-content: space-between;
+}
+
 .text-center {
   text-align: center;
 }
 
-.confirmation-details-container {
-  padding: 20px;
-}
-
 .attendees-container {
   flex-grow: 2;
+  padding-right: 20px;
 }
 
 .attendee {
@@ -42,4 +43,30 @@ hr {
 
 hr.attendee-hr {
   border-style: dashed;
+}
+
+.tips-to-prepare-square {
+  background-color: #ddd;
+  height: 200px;
+  width: 200px;
+  padding: 50px;
+  vertical-align: center;
+  text-align: center;
+}
+
+.rausch-background {
+  background-color: #f57670;
+  color: #fff;
+}
+
+a.react-add-to-calendar__button {
+  color: rgb(68, 165, 201);
+  text-decoration: underline;
+}
+
+.react-add-to-calendar__dropdown {
+  padding: 5px 0 5px 8px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid #a8a8a8;
+  background-color: #fff;
 }
