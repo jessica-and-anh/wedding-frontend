@@ -5,11 +5,11 @@ import '../../../stylesheets/components/rsvp-confirmation.css';
 import fridayImage from '../../../images/rsvp/friday.png';
 
 const event = {
-    title: 'Jessica & Anh’s Wedding',
+    title: 'Jessica %2B Anh’s Wedding',
     description: 'Labor Day weekend destination wedding',
     location: 'Graeagle, California (north of Lake Tahoe)',
-    startTime: '2017-09-02T19:30:00-08:00',
-    endTime: '2017-09-04T14:00:00-08:00'
+    startTime: '2017-09-02T15:30:00-08:00',
+    endTime: '2017-09-04T10:00:00-08:00'
 };
 
 const TIP_SQUARES = [
@@ -36,10 +36,9 @@ const TIP_SQUARES = [
     },
   ],
   [
-
     {
-      header: 'Plan what to bring for the weekend',
-      linkText: 'Learn',
+      header: 'TODO: fix link! Plan what to bring for the weekend',
+      linkText: 'Learn more',
       url: 'todo',
     },
     {
