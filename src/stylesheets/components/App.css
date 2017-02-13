@@ -68,7 +68,7 @@ p, span, a {
   margin-top: 25px;
 }
 
-a.styled-link {
+.styled-link {
   color: rgb(68, 165, 201);
   text-decoration: underline;
 }

@@ -1,7 +1,16 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
+import AddToCalendar from 'react-add-to-calendar';
 import '../../../stylesheets/components/rsvp-confirmation.css';
 import fridayImage from '../../../images/rsvp/friday.png';
+
+const event = {
+    title: 'Jessica & Anh’s Wedding',
+    description: 'Labor Day weekend destination wedding',
+    location: 'Graeagle, California (north of Lake Tahoe)',
+    startTime: '2017-09-02T19:30:00-08:00',
+    endTime: '2017-09-04T14:00:00-08:00'
+};
 
 const TIP_SQUARES = [
   [
@@ -12,8 +21,13 @@ const TIP_SQUARES = [
     },
     {
       header: 'Add our wedding to your calendar',
-      linkText: 'Add to calendar',
-      url: 'todo',
+      addToCalendar: (
+        <AddToCalendar
+          event={event}
+          buttonTemplate={{ textOnly: 'none' }}
+          buttonLabel="Add to calendar"
+        />
+      ),
     },
     {
       header: 'Read about our venue and lodging',
@@ -42,7 +56,7 @@ const TIP_SQUARES = [
 ];
 
 
-function TipToPrepareSquare({ icon, headerOnly, header, linkText, url, isRausch }) {
+function TipToPrepareSquare({ icon, headerOnly, header, linkText, url, isRausch, addToCalendar }) {
   if (headerOnly) {
     return (
       <div className={cx('tips-to-prepare-square', { 'rausch-background': isRausch })}>
@@ -55,6 +69,7 @@ function TipToPrepareSquare({ icon, headerOnly, header, linkText, url, isRausch 
       {/*icon*/}<img src={fridayImage} className="rsvp-day" alt="testing" />
       <h2 className="space-top-3 space-5">{header}</h2>
       {url && <a className="styled-link" href={url} target="_blank">{linkText}</a>}
+      {addToCalendar}
     </div>
   );
 }
