@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
     modalType,
     modalProps,
   } = state.modal;
-
   return {
     isOpen: modalType != null,
     title: modalProps.title,

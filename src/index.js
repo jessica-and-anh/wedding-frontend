@@ -55,6 +55,7 @@ ReactDOM.render(
     <Route path="/" component={Application}>
       <IndexRoute component={Homepage} />
       <Route path="rsvp-confirmation" component={RsvpConfirmation} />
+      <Route path="rsvp-confirmation/:id" component={RsvpConfirmation} />
     </Route>
   </Router>,
   document.getElementById('root')
