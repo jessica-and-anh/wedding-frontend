@@ -19,7 +19,7 @@ export const showRsvpPasscodeModal = () => {
 const rsvpModalProps = {
   modalType: 'rsvp',
   modalProps: {
-    title: 'RSVP Now',
+    title: 'You’re invited to celebrate our wedding!',
     content: <RsvpContent />,
   },
 };

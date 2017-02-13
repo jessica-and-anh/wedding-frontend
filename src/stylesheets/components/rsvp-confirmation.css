@@ -1,7 +1,6 @@
 .flex {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -10,21 +9,47 @@
   justify-content: space-between;
 }
 
-.text-center {
+.flex-space-around {
+  justify-content: space-around;
+}
+
+.hero-rsvp {
+  min-height: 550px;
+  background: #ffffff url("../../images/rsvp-hero.jpg") no-repeat center bottom;
+  background-size: cover;
   text-align: center;
 }
 
+.hero-rsvp-text {
+  display: inline-block;
+  margin-top: 15%;
+}
+
 .attendees-container {
-  flex-grow: 2;
-  padding-right: 20px;
+  flex: 2;
 }
 
-.attendee {
-  outline: 2px solid #ddd;
+.rsvp-lodging {
+  flex: 1;
 }
 
-.spacing-right {
-  margin-right: 40px;
+.confirmation-attendee-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.confirmation-attendee {
+  width: 20%;
+  height: 70px;
+  padding-left: 70px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  margin: 0 10px 13px;
+  position: relative;
 }
 
 h1 {
@@ -43,10 +68,11 @@ hr {
 
 hr.attendee-hr {
   border-style: dashed;
+  margin: 20px;
 }
 
 .tips-to-prepare-square {
-  background-color: #ddd;
+  background-color: #eee;
   height: 200px;
   width: 200px;
   padding: 50px;
@@ -69,4 +95,25 @@ a.react-add-to-calendar__button {
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
   border: 1px solid #a8a8a8;
   background-color: #fff;
+}
+
+.rsvp-confirmation__header {
+  width: 500px;
+  color: #fff;
+  text-shadow: 0px 1px 1px #999;
+  text-align: center;
+  font-weight: 900;
+  font-size: 75px;
+}
+
+.rsvp-confirmation__arrow {
+  margin-top: 150px;
+  opacity: 0.6;
+}
+
+.rsvp-confirmation__calendar {
+  width: 66px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
 }

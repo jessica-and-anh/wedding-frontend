@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import cx from 'classnames';
 import AddToCalendar from 'react-add-to-calendar';
 import '../../../stylesheets/components/rsvp-confirmation.css';
-import fridayImage from '../../../images/rsvp/friday.png';
 
 const event = {
     title: 'Jessica %2B Anh’s Wedding',
@@ -65,7 +64,6 @@ function TipToPrepareSquare({ icon, headerOnly, header, linkText, url, isRausch,
   }
   return (
     <div className="tips-to-prepare-square">
-      {/*icon*/}<img src={fridayImage} className="rsvp-day" alt="testing" />
       <h2 className="space-top-3 space-5">{header}</h2>
       {url && <a className="styled-link" href={url} target="_blank">{linkText}</a>}
       {addToCalendar}
@@ -94,7 +92,7 @@ export default function TipsToPrepare() {
     <div className="max-width">
       {TIP_SQUARES.map((row, rowIndex) => {
         return (
-          <div className="flex flex-space-between space-3" key={rowIndex}>
+          <div className="flex flex-space-around space-3" key={rowIndex}>
             {row.map((squareProps) => {
               return <TipToPrepareSquare key={squareProps.header} {...squareProps} />;
             })}

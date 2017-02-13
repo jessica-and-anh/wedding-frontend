@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import FlatButton from 'material-ui/FlatButton';
-import RsvpHero from '../rsvp-hero';
+import RsvpHero from './rsvp-hero';
 import AttendeesList from './AttendeesList';
 import Lodging from './Lodging';
 import TipsToPrepare from './TipsToPrepare';
@@ -29,10 +29,10 @@ export default class RsvpConfirmation extends Component {
 
     return (
       <div>
-        <div className="max-width">
+        <div>
           <RsvpHero isAnyoneAttending={isAnyoneAttending}/>
-          <section className="rsvp-confirmation">
-            <h1 className="text-center space-top-2 space-5">Here’s a summary of what you told us:</h1>
+          <section className="rsvp-confirmation max-width">
+            <h1 className="text-center space-top-4 space-5">Here’s a summary of what you told us:</h1>
             <div className="flex">
               <div className="attendees-container">
                 <AttendeesList
@@ -40,7 +40,7 @@ export default class RsvpConfirmation extends Component {
                   users={guestsAttending}
                 />
                 {guestsAttending.length > 0 && guestsNotAttending.length > 0 &&
-                  <hr className="space-top-2 space-2 attendee-hr" />}
+                  <hr className="attendee-hr" />}
                 <AttendeesList
                   subheader="NOT ATTENDING"
                   users={guestsNotAttending}
@@ -55,14 +55,14 @@ export default class RsvpConfirmation extends Component {
             <div className="text-center">
               <FlatButton
                 onClick={onRsvpClick}
-                primary
+                default
               >
                 Want to change something?
               </FlatButton>
             </div>
           </section>
         </div>
-        <hr className="space-top-3 space-3" />
+        <hr className="space-top-3 space-3 max-width" />
         <TipsToPrepare />
       </div>
     );

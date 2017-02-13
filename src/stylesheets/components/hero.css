@@ -1,76 +1,28 @@
 .hero {
-  background: linear-gradient(#d7d7d7, #eee, #d7d7d7);
-  min-height: 600px;
-  padding: 40px 0 20px;
-}
-
-.hero .max-width {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image-container {
-  display: inline-block;
-  float: left;
-  width: 400px;
-  height: 600px;
-}
-
-.hero-image {
-  height: 100%;
+  min-height: 550px;
+  background: #ffffff url("../../images/bride-and-groom.jpg") no-repeat center bottom;
+  background-size: cover;
 }
 
 .hero-welcome-container {
-  height: 100%;
-  padding-left: 5%;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding-top: 8%;
 }
 
 .jessica-plus-anh {
   font-weight: 100;
   font-size: 60px;
-  text-shadow: 0px 1px 1px #fff;
-}
-
-.hero-divider {
-  height: 3%;
-  margin: 20px 0;
-}
-
-.welcome-text {
-  width: 410px;
+  text-shadow: 0px 1px 1px #333;
   color: #fff;
-  text-shadow: 0px 1px 1px #999;
-  text-align: center;
-  font-weight: 900;
-}
-
-.welcome-text-1 {
-  font-size: 75px;
-}
-
-.welcome-text-2,
-.welcome-text-3 {
-  font-size: 60px;
-}
-
-.welcome-text-4 {
-  font-size: 101px;
 }
 
 .wedding-date {
   width: 400px;
-  color: #333;
-  text-shadow: 0px 1px 1px #fff;
-  text-align: center;
+  color: #fff;
+  text-shadow: 0px 1px 1px #333;
   font-weight: 900;
   font-size: 99px;
+  display: inline-block;
 }
 
 .hero-rsvp-container {

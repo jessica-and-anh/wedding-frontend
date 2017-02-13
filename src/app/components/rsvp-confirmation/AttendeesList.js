@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Avatar from 'material-ui/Avatar';
-import { List, ListItem } from 'material-ui/List';
 import '../../../stylesheets/components/rsvp-confirmation.css';
 
 export default function AttendeesList({
@@ -14,29 +13,33 @@ export default function AttendeesList({
   return (
     <div>
       <h2 className="space-2">{subheader}</h2>
-      <List className="flex">
+      <ul className="confirmation-attendee-list">
         {
           users.map((user) => {
             const initial = user.first_name[0].toUpperCase();
             return (
-              <div className="attendee spacing-right" key={user.id}>
-                <ListItem
-                  leftAvatar={
-                      <Avatar
-                        backgroundColor="#44a5c9"
-                        size={50}
-                      >
-                      {initial}
-                    </Avatar>
-                  }
-                  primaryText={`${user.first_name} ${user.last_name}`}
-                  secondaryText={user.email}
+              <li className="confirmation-attendee" key={user.id}>
+                <Avatar
+                  backgroundColor="#44a5c9"
+                  size={50}
+                  className="attendee-avatar"
+                >
+                  {initial}
+                </Avatar>
+                <Avatar
+                  backgroundColor="white"
+                  size={54}
+                  className="attendee-avatar-bg"
                 />
-              </div>
+                <div className="attendee-data">
+                  <p className="attendee-name">{`${user.first_name} ${user.last_name}`}</p>
+                  <p className="attendee-email">{user.email}</p>
+                </div>
+              </li>
             );
           })
         }
-      </List>
+      </ul>
     </div>
   );
 }

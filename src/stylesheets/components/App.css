@@ -56,6 +56,10 @@ p, span, a {
   margin-top: 12.5px;
 }
 
+.space-top-3 {
+  margin-top: 25px;
+}
+
 .space-top-4 {
   margin-top: 37.5px;
 }
@@ -64,11 +68,51 @@ p, span, a {
   margin-top: 50px;
 }
 
-.space-top-3 {
-  margin-top: 25px;
+.padding-left-1 {
+  padding-left: 6.25px;
+}
+
+.padding-left-2 {
+  padding-left: 12.5px;
+}
+
+.padding-left-3 {
+  padding-left: 25px;
+}
+
+.padding-left-4 {
+  padding-left: 37.5px;
+}
+
+.padding-left-5 {
+  padding-left: 50px;
+}
+
+.padding-right-1 {
+  padding-right: 6.25px;
+}
+
+.padding-right-2 {
+  padding-right: 12.5px;
+}
+
+.padding-right-3 {
+  padding-right: 25px;
+}
+
+.padding-right-4 {
+  padding-right: 37.5px;
+}
+
+.padding-right-5 {
+  padding-right: 50px;
 }
 
 .styled-link {
   color: rgb(68, 165, 201);
   text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
 }

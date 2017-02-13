@@ -24,25 +24,24 @@ function Calendars({ lodgingDays, requestedLodgingDays }) {
                 break;
             }
             return (
-              <li className="spacing-right" key={day}>
-                <label className="rsvp-day-image-wrapper" htmlFor={day}>
+              <li className="padding-left-1 padding-right-1" key={day}>
+                <div className="rsvp-confirmation__calendar">
                   <img src={image} className="rsvp-day" alt={day} />
-                </label>
+                </div>
               </li>
             );
           })}
         </ul>
 
-        We will let you know shortly if your request can be approved.
+        <p className="text-center padding-left-4 padding-right-4">We will let you know shortly if your request can be approved.</p>
       </div>
     );
   }
 
   return (
     <div>
-      <p className="error space-2">
-        You are <b>not</b> requesting on-site lodging. There are many other options
-        nearby such as:
+      <p className="error space-2 text-center padding-left-3 padding-right-3">
+        You are <b>not</b> requesting on-site lodging. There are many other options nearby such as:
       </p>
       <ul>
         <li className="space-1">
@@ -72,11 +71,12 @@ export default function Lodging({ userGroup }) {
     sunday,
   };
   const requestedLodgingDays = Object.values(lodgingDays).filter((day) => { return day });
+  const nights = requestedLodgingDays.length > 1 || requestedLodgingDays.length === 0 ? 'NIGHTS' : 'NIGHT';
 
   return (
-    <div>
+    <div className="rsvp-lodging text-center">
       <h2 className="space-2">REQUESTED ACCOMODATIONS</h2>
-      <h1 className="space-3">{requestedLodgingDays.length} NIGHTS</h1>
+      <h1 className="space-3">{requestedLodgingDays.length} {nights}</h1>
       <Calendars
         lodgingDays={lodgingDays}
         requestedLodgingDays={requestedLodgingDays}
