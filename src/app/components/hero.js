@@ -9,7 +9,7 @@ class Hero extends Component {
           <h1 className="jessica-plus-anh">
             JESSICA + ANH
           </h1>
-          <p className="wedding-date">09.02.17</p>
+          <p className="wedding-date">9.2.17</p>
         </div>
       </section>
     );
