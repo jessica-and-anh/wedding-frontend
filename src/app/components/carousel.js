@@ -49,7 +49,7 @@ class Carousel extends Component {
       centerPadding: 0,
       dots: false,
       infinite: true,
-      lazyLoad: true,
+      lazyLoad: false,
       prevArrow: <CarouselArrow onClick={this.next} direction="left" />,
       nextArrow: <CarouselArrow onClick={this.previous} direction="right" />,
       speed: 300,
