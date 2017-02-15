@@ -15,11 +15,11 @@ p, span, a {
 }
 
 .scrollable {
-  margin-top: -100px;
+  margin-top: -50px;
 }
 
 .scroll-to-wrapper {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .clearfix:after {

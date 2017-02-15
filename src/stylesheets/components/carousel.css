@@ -1,0 +1,32 @@
+.carousel {
+  position: relative;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 10;
+  top: 230px;
+  cursor: pointer;
+}
+
+.carousel-left-arrow {
+  left: 70px;
+  transition: left 0.2s ease;
+}
+
+.carousel-left-arrow:hover {
+  left: 50px;
+}
+
+.carousel-right-arrow {
+  right: 70px;
+  transition: right 0.2s ease;
+}
+
+.carousel-right-arrow:hover {
+  right: 50px;
+}

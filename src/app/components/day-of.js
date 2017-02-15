@@ -22,11 +22,11 @@ class OtherParty extends Component {
           </div>
           <div className="day-of-item">
             <img src={calendar} className="day-of-cal" alt="The day of calendar" />
-            <p className="day-of-title">MEMORIAL DAY WEEKEND</p>
+            <p className="day-of-title">LABOR DAY WEEKEND</p>
             <p className="day-of-desc">
               09/02/2017 - 09/04/2017 *
               <br />
-              Saturday, 4:30 PM
+              Saturday, 4:00 PM
             </p>
           </div>
         </div>
