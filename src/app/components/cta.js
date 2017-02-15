@@ -11,7 +11,8 @@ class Cta extends Component {
     this.onRsvpClick = this.onRsvpClick.bind(this);
   }
 
-  onRsvpClick() {
+  onRsvpClick(evt) {
+    evt.preventDefault();
     this.dispatch(showRsvpPasscodeModal());
   }
 
