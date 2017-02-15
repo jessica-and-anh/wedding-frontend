@@ -27,7 +27,7 @@
 
 .members-headshots {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: 50px 10% 0;

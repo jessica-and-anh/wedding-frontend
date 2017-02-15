@@ -10,6 +10,7 @@ import Bridesmaids from '../components/bridesmaids';
 import Groomsmen from '../components/groomsmen';
 import OtherParty from '../components/other-party';
 import DayOf from '../components/day-of';
+import Carousel from '../components/carousel';
 
 const Element = Scroll.Element;
 
@@ -35,6 +36,11 @@ class Homepage extends Component {
         <section className="the-day-of scrollable">
           <Element name="the-day-of" className="scroll-to-wrapper">
             <DayOf />
+          </Element>
+        </section>
+        <section className="carousel scrollable">
+          <Element name="photos" className="scroll-to-wrapper">
+            <Carousel />
           </Element>
         </section>
       </div>
