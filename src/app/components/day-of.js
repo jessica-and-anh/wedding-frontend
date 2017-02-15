@@ -15,9 +15,9 @@ class OtherParty extends Component {
             <img src={map} className="day-of-map" alt="The day of map" />
             <p className="day-of-title">CHALET VIEW LODGE</p>
             <p className="day-of-desc">
-              72056 Highway 70
+              72056 CA-70
               <br />
-              Graeagle, CA 96103
+              Portola, CA 96122
             </p>
           </div>
           <div className="day-of-item">
