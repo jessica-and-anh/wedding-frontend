@@ -21,24 +21,24 @@ export function CarouselArrow({ onClick, direction }) {
         'carousel-right-arrow': direction === 'right'
       }
     )}>
-      <img src={arrowImage} alt="arrow"/>
+      <img src={arrowImage} alt="arrow" />
     </div>
   );
 }
 
 class Carousel extends Component {
   constructor(props) {
-    super(props)
-    this.next = this.next.bind(this)
-    this.previous = this.previous.bind(this)
+    super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
   }
 
   next() {
-    this.slider.slickNext()
+    this.slider.slickNext();
   }
 
   previous() {
-    this.slider.slickPrev()
+    this.slider.slickPrev();
   }
 
   render() {
@@ -50,8 +50,8 @@ class Carousel extends Component {
       dots: false,
       infinite: true,
       lazyLoad: true,
-      prevArrow: <CarouselArrow onClick={this.next} direction="left"/>,
-      nextArrow: <CarouselArrow onClick={this.previous} direction="right"/>,
+      prevArrow: <CarouselArrow onClick={this.next} direction="left" />,
+      nextArrow: <CarouselArrow onClick={this.previous} direction="right" />,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -71,7 +71,7 @@ class Carousel extends Component {
           imageList.map((image, index) => {
             return (
               <div key={index}>
-                <img src={image} alt="Anh and Jessica"/>
+                <img src={image} alt="Anh and Jessica" />
               </div>
             );
           })
