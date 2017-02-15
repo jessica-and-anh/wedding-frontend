@@ -1,15 +1,7 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
-import AddToCalendar from 'react-add-to-calendar';
+import AddToCalendar from '../add-to-calendar';
 import '../../../stylesheets/components/rsvp-confirmation.css';
-
-const event = {
-    title: 'Jessica %2B Anh’s Wedding',
-    description: 'Labor Day weekend destination wedding',
-    location: 'Graeagle, California (north of Lake Tahoe)',
-    startTime: '2017-09-02T15:30:00-08:00',
-    endTime: '2017-09-04T10:00:00-08:00'
-};
 
 const TIP_SQUARES = [
   [
@@ -21,11 +13,7 @@ const TIP_SQUARES = [
     {
       header: 'Add our wedding to your calendar',
       addToCalendar: (
-        <AddToCalendar
-          event={event}
-          buttonTemplate={{ textOnly: 'none' }}
-          buttonLabel="Add to calendar"
-        />
+        <AddToCalendar />
       ),
     },
     {

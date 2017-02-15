@@ -11,6 +11,7 @@ import Groomsmen from '../components/groomsmen';
 import OtherParty from '../components/other-party';
 import DayOf from '../components/day-of';
 import Carousel from '../components/carousel';
+import Footer from '../components/footer';
 
 const Element = Scroll.Element;
 
@@ -43,6 +44,7 @@ class Homepage extends Component {
             <Carousel />
           </Element>
         </section>
+        <Footer />
       </div>
     );
   }

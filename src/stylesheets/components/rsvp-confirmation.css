@@ -85,18 +85,6 @@ hr.attendee-hr {
   color: #fff;
 }
 
-a.react-add-to-calendar__button {
-  color: rgb(68, 165, 201);
-  text-decoration: underline;
-}
-
-.react-add-to-calendar__dropdown {
-  padding: 5px 0 5px 8px;
-  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
-  border: 1px solid #a8a8a8;
-  background-color: #fff;
-}
-
 .rsvp-confirmation__header {
   width: 500px;
   color: #fff;

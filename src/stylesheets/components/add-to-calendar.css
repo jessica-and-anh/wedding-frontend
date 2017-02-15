@@ -1,0 +1,14 @@
+a.react-add-to-calendar__button {
+  color: rgb(68, 165, 201);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.react-add-to-calendar__dropdown {
+  margin-top: 20px;
+  border-radius: 3px;
+  padding: 5px 0 5px 8px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
