@@ -25,10 +25,6 @@ class SimpleDialog extends Component {
       users,
     } = this.props;
     onDialogSubmit(userGroup, users);
-    debugger;
-    // TODO these things upon success
-    // onDialogClose();
-    // onRouteToConfirmation(code);
   }
 
   render() {

@@ -73,10 +73,12 @@ export const fetchRsvpGroup = (code, showModal = true) => {
 }
 
 export const submitPostRsvpGroup = (userGroup, users) => {
-  const POST_URL = postRsvpGroupUrl(userGroup.id);
+  const { id } = userGroup;
+  const POST_URL = postRsvpGroupUrl(id);
 
   function postData(dispatch) {
     axios.post(POST_URL, {
+        id,
         userGroup,
         users,
       })

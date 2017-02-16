@@ -9,5 +9,5 @@ export function getRsvpGroupUrl(code) {
 };
 
 export function postRsvpGroupUrl(userGroupId) {
-  return apiUrl(`user_groups/${userGroupId}.json`);
+  return apiUrl(`user_groups/${userGroupId}`);
 };
