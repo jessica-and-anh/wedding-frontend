@@ -17,10 +17,7 @@ class SimpleDialog extends Component {
 
   onSubmit() {
     const {
-      code,
       onDialogSubmit,
-      onDialogClose,
-      onRouteToConfirmation,
       userGroup,
       users,
     } = this.props;

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import fetch from 'isomorphic-fetch';
 import { push } from 'react-router-redux';
 import {
   GET_RSVP_GROUP,
@@ -7,8 +8,8 @@ import {
   POST_SUCCESS_RSVP_GROUP,
   ERROR_RSVP_GROUP
 } from './constants';
-import fetch from 'isomorphic-fetch';
-import { apiUrl, getRsvpGroupUrl, postRsvpGroupUrl } from '../constants/helpers';
+import { API_DOMAIN } from '../constants/paths';
+import { getRsvpGroupUrl, postRsvpGroupUrl, sanitizePostData } from '../constants/helpers';
 import { showRsvpContentModal } from './show-rsvp-modal';
 
 export const getRsvpGroup = () => {
@@ -77,11 +78,17 @@ export const submitPostRsvpGroup = (userGroup, users) => {
   const POST_URL = postRsvpGroupUrl(id);
 
   function postData(dispatch) {
-    axios.post(POST_URL, {
-        id,
-        userGroup,
-        users,
-      })
+    axios({
+      url: POST_URL,
+      method: 'put',
+      data: sanitizePostData({ userGroup, users }),
+      headers: {
+        'Access-Control-Allow-Origin': API_DOMAIN,
+        'Access-Control-Allow-Methods': 'PUT',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      }
+
+    })
       .then(response => response.json())
       .then(json => dispatch(postSuccessRsvpGroup(json)))
       .then(json => {
