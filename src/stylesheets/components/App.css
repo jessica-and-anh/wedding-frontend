@@ -9,6 +9,10 @@ p, span, a {
   text-decoration: none;
 }
 
+section {
+  display: block;
+}
+
 .max-width {
   max-width: 90%;
   margin: 0 auto;

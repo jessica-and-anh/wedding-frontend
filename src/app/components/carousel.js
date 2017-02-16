@@ -44,12 +44,15 @@ class Carousel extends Component {
   render() {
     const settings = {
       accessibility: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
       arrows: true,
       centerMode: true,
       centerPadding: 0,
       dots: false,
       infinite: true,
       lazyLoad: false,
+      pauseOnHover: false,
       prevArrow: <CarouselArrow onClick={this.next} direction="left" />,
       nextArrow: <CarouselArrow onClick={this.previous} direction="right" />,
       speed: 300,

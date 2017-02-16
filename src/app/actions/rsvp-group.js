@@ -50,6 +50,6 @@ export const fetchRsvpGroup = (code, showModal = true) => {
 
   return dispatch => {
     dispatch(requestRsvpGroup());
-    return setTimeout(fetchData.bind(this, dispatch), 1000);
+    return setTimeout(fetchData.bind(this, dispatch), 100);
   };
 }

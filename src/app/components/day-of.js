@@ -4,15 +4,15 @@ import '../../stylesheets/components/day-of.css';
 import map from '../../images/map.png';
 import calendar from '../../images/calendar.png';
 
-class OtherParty extends Component {
+class WeddingWeekend extends Component {
 
   render() {
     return (
       <section className="day-of">
-        <header>THE DAY OF</header>
+        <header>THE WEDDING WEEKEND</header>
         <div className="day-of-content">
           <div className="day-of-item">
-            <img src={map} className="day-of-map" alt="The day of map" />
+            <img src={map} className="day-of-map" alt="Wedding weekend map" />
             <p className="day-of-title">CHALET VIEW LODGE</p>
             <p className="day-of-desc">
               72056 CA-70
@@ -21,7 +21,7 @@ class OtherParty extends Component {
             </p>
           </div>
           <div className="day-of-item">
-            <img src={calendar} className="day-of-cal" alt="The day of calendar" />
+            <img src={calendar} className="day-of-cal" alt="Wedding weekend calendar" />
             <p className="day-of-title">LABOR DAY WEEKEND</p>
             <p className="day-of-desc">
               09/02/2017 - 09/04/2017 *
@@ -38,4 +38,4 @@ class OtherParty extends Component {
   }
 }
 
-export default OtherParty;
+export default WeddingWeekend;

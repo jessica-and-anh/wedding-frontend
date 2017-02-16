@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import { showRsvpPasscodeModal } from '../actions/show-rsvp-modal';
 import Scroll from 'react-scroll';
 import '../../stylesheets/components/nav.css';
 
 import logo from '../../images/logo.png';
 
-const Link = Scroll.Link;
+const ScrollLink = Scroll.Link;
 
 const SCROLLABLE_HEADER_NAV_ANCHORS = [
   {
@@ -18,12 +18,16 @@ const SCROLLABLE_HEADER_NAV_ANCHORS = [
     anchorId: 'wedding-party',
   },
   {
-    text: 'THE DAY OF',
+    text: 'PHOTOS',
+    anchorId: 'photos',
+  },
+  {
+    text: 'WEDDING WEEKEND',
     anchorId: 'the-day-of',
   },
   {
-    text: 'PHOTOS',
-    anchorId: 'photos',
+    text: 'REGISTRY',
+    anchorId: 'registry',
   }
 ];
 
@@ -32,7 +36,7 @@ export function HeaderNavScrollableAnchor({ text, anchorId }) {
     <li
       className="nav-item"
     >
-      <Link
+      <ScrollLink
         activeClass="active"
         className="nav-item-anchor"
         to={anchorId}
@@ -42,7 +46,7 @@ export function HeaderNavScrollableAnchor({ text, anchorId }) {
         isDynamic={true}
       >
         {text}
-      </Link>
+      </ScrollLink>
     </li>
 
   );
