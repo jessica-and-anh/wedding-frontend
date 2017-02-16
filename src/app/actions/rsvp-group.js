@@ -1,21 +1,39 @@
+import axios from 'axios';
+import { push } from 'react-router-redux';
 import {
-  REQUEST_RSVP_GROUP,
-  RECEIVE_RSVP_GROUP,
+  GET_RSVP_GROUP,
+  GET_SUCCESS_RSVP_GROUP,
+  POST_RSVP_GROUP,
+  POST_SUCCESS_RSVP_GROUP,
   ERROR_RSVP_GROUP
 } from './constants';
 import fetch from 'isomorphic-fetch';
-import { apiUrl } from '../constants/helpers';
+import { apiUrl, getRsvpGroupUrl, postRsvpGroupUrl } from '../constants/helpers';
 import { showRsvpContentModal } from './show-rsvp-modal';
 
-export const requestRsvpGroup = () => {
+export const getRsvpGroup = () => {
   return {
-    type: REQUEST_RSVP_GROUP,
+    type: GET_RSVP_GROUP,
   };
 };
 
-export const receiveRsvpGroup = ({ user_group, users }) => {
+export const getSuccessRsvpGroup = ({ user_group, users }) => {
   return {
-    type: RECEIVE_RSVP_GROUP,
+    type: GET_SUCCESS_RSVP_GROUP,
+    userGroup: user_group,
+    users,
+  };
+};
+
+export const postRsvpGroup = () => {
+  return {
+    type: POST_RSVP_GROUP,
+  };
+};
+
+export const postSuccessRsvpGroup = ({ user_group, users }) => {
+  return {
+    type: POST_SUCCESS_RSVP_GROUP,
     userGroup: user_group,
     users,
   };
@@ -34,12 +52,12 @@ function canShowRsvpContent(json, dispatch) {
 }
 
 export const fetchRsvpGroup = (code, showModal = true) => {
-  const FETCH_URL = apiUrl(`rsvp/show/${code}`);
+  const FETCH_URL = getRsvpGroupUrl(code);
 
-  function fetchData(dispatch) {
+  function getData(dispatch) {
     return fetch(FETCH_URL)
       .then(response => response.json())
-      .then(json => dispatch(receiveRsvpGroup(json)))
+      .then(json => dispatch(getSuccessRsvpGroup(json)))
       .then(json => {
         if (showModal) {
           canShowRsvpContent(json, dispatch)
@@ -49,7 +67,29 @@ export const fetchRsvpGroup = (code, showModal = true) => {
   }
 
   return dispatch => {
-    dispatch(requestRsvpGroup());
-    return setTimeout(fetchData.bind(this, dispatch), 100);
+    dispatch(getRsvpGroup());
+    return setTimeout(getData.bind(this, dispatch), 100);
   };
+}
+
+export const submitPostRsvpGroup = (userGroup, users) => {
+  const POST_URL = postRsvpGroupUrl(userGroup.id);
+
+  function postData(dispatch) {
+    axios.post(POST_URL, {
+        userGroup,
+        users,
+      })
+      .then(response => response.json())
+      .then(json => dispatch(postSuccessRsvpGroup(json)))
+      .then(json => {
+        dispatch(push('/rsvp-confirmation'));
+      })
+      .catch(err => dispatch(errorRsvpGroup(err)));
+  }
+
+  return dispatch => {
+    dispatch(postRsvpGroup());
+    return postData(dispatch);
+  }
 }

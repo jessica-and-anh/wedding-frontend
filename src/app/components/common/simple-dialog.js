@@ -12,17 +12,23 @@ import FlatButton from 'material-ui/FlatButton';
 class SimpleDialog extends Component {
   constructor(props) {
     super(props);
-    this.onDialogSubmit = this.onDialogSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onDialogSubmit() {
+  onSubmit() {
     const {
       code,
+      onDialogSubmit,
       onDialogClose,
       onRouteToConfirmation,
+      userGroup,
+      users,
     } = this.props;
-    onDialogClose();
-    onRouteToConfirmation(code);
+    onDialogSubmit(userGroup, users);
+    debugger;
+    // TODO these things upon success
+    // onDialogClose();
+    // onRouteToConfirmation(code);
   }
 
   render() {
@@ -55,7 +61,7 @@ class SimpleDialog extends Component {
       <FlatButton
         label={submitText}
         primary={true}
-        onTouchTap={this.onDialogSubmit}
+        onTouchTap={this.onSubmit}
         disabled={disableSubmit}
       />,
     ] : [];
