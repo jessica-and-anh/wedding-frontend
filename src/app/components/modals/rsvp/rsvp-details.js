@@ -6,7 +6,8 @@ import '../../../../stylesheets/components/modals/rsvp/rsvp-details.css';
 import {
   updateAttendingDay,
   updateNote,
-  updateDiet
+  updateDiet,
+  LODGING_REQUESTED,
 } from '../../../actions/rsvp-details';
 
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -47,7 +48,8 @@ class RsvpDetails extends Component {
 
   onDayCheck(evt, isInputChecked) {
     const day = evt.target.name;
-    this.dispatch(updateAttendingDay(day, isInputChecked));
+    const attendingValue = isInputChecked ? LODGING_REQUESTED : null;
+    this.dispatch(updateAttendingDay(day, attendingValue));
   }
 
   onNoteChange(evt, text) {
@@ -108,7 +110,7 @@ class RsvpDetails extends Component {
               <DaySelection
                 day="friday"
                 image={friday}
-                hasLodging={lodging_friday}
+                hasLodging={lodging_friday != null}
                 onCheck={this.onDayCheck}
               />
             }
@@ -116,14 +118,14 @@ class RsvpDetails extends Component {
             <DaySelection
               day="saturday"
               image={saturday}
-              hasLodging={lodging_saturday}
+              hasLodging={lodging_saturday != null}
               onCheck={this.onDayCheck}
             />
 
             <DaySelection
               day="sunday"
               image={sunday}
-              hasLodging={lodging_sunday}
+              hasLodging={lodging_sunday != null}
               onCheck={this.onDayCheck}
             />
           </div>

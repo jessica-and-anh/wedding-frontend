@@ -25,3 +25,6 @@ export const updateDiet = (count) => {
     count,
   };
 };
+
+// TODO does this belong here?
+export const LODGING_REQUESTED = 'REQUESTED';
