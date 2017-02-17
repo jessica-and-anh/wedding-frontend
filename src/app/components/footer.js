@@ -49,6 +49,8 @@ class Footer extends Component {
             <a className="footer-link last-link" target="_blank" href="https://www.google.com/maps/dir//Chalet+View+Lodge,+72056+CA-70,+Portola,+CA+96122/@39.7931841,-120.5337847,17z/data=!4m15!1m6!3m5!1s0x809c6b35ba2b889d:0xdc0312148e7fc387!2sChalet+View+Lodge!8m2!3d39.79318!4d-120.531596!4m7!1m0!1m5!1m1!1s0x809c6b35ba2b889d:0xdc0312148e7fc387!2m2!1d-120.531596!2d39.79318">Get Directions</a>
           </div>
         </div>
+
+        <h5>Built with love, by Jessica and Anh.</h5>
       </section>
     );
   }
