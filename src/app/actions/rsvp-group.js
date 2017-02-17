@@ -11,6 +11,7 @@ import {
 import { API_DOMAIN } from '../constants/paths';
 import { getRsvpGroupUrl, postRsvpGroupUrl, sanitizePostData } from '../constants/helpers';
 import { showRsvpContentModal } from './show-rsvp-modal';
+import { hideModal } from './modal';
 
 export const getRsvpGroup = () => {
   return {
@@ -89,11 +90,10 @@ export const submitPostRsvpGroup = (userGroup, users) => {
       }
 
     })
-      .then(response => response.json())
+      .then(response => response.data)
       .then(json => dispatch(postSuccessRsvpGroup(json)))
-      .then(json => {
-        dispatch(push('/rsvp-confirmation'));
-      })
+      .then(json => dispatch(push(`/rsvp-confirmation/${json.userGroup.code}`)))
+      .then(dispatch(hideModal()))
       .catch(err => dispatch(errorRsvpGroup(err)));
   }
 

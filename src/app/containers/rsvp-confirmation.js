@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { fetchRsvpGroup, submitPostRsvpGroup } from '../actions/rsvp-group';
 import Content from '../components/rsvp-confirmation/RsvpConfirmation';
-import { showRsvpPasscodeModal } from '../actions/show-rsvp-modal';
+import { showRsvpContentModal } from '../actions/show-rsvp-modal';
 
 const mapStateToProps = (state, routerProps) => {
   const {
@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(fetchRsvpGroup(code, false));
     },
     onRsvpClick: (code) => {
-      dispatch(showRsvpPasscodeModal());
+      dispatch(showRsvpContentModal());
     },
     onRsvpSubmit: (userGroup) => {
       dispatch(submitPostRsvpGroup(userGroup));
