@@ -43,7 +43,7 @@ class WeddingWeekend extends Component {
             <img src={calendar} className="day-of-cal" alt="Wedding weekend calendar" />
             <p className="day-of-title">LABOR DAY WEEKEND</p>
             <p className="day-of-desc">
-              09/02/2017 - 09/04/2017
+              9/2/2017 - 9/4/2017
               <br />
               Saturday, 4:00 PM
             </p>
