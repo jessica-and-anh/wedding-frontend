@@ -1,21 +1,21 @@
 import {
-  REQUEST_RSVP_GROUP,
-  RECEIVE_RSVP_GROUP,
+  GET_RSVP_GROUP,
+  GET_SUCCESS_RSVP_GROUP,
   ERROR_RSVP_GROUP
 } from './constants';
 import fetch from 'isomorphic-fetch';
 import { apiUrl } from '../constants/helpers';
 import { showRsvpContentModal } from './show-rsvp-modal';
 
-export const requestRsvpGroup = () => {
+export const getRsvpGroup = () => {
   return {
-    type: REQUEST_RSVP_GROUP,
+    type: GET_RSVP_GROUP,
   };
 };
 
-export const receiveRsvpGroup = ({ user_group, users }) => {
+export const getSuccessRsvpGroup = ({ user_group, users }) => {
   return {
-    type: RECEIVE_RSVP_GROUP,
+    type: GET_SUCCESS_RSVP_GROUP,
     userGroup: user_group,
     users,
   };
@@ -41,7 +41,7 @@ export const fetchRsvpGroup = (email) => {
       })
       .then((response) => {
         if (response.user_id) {
-          dispatch(receiveRsvpGroup(json))
+          dispatch(getSuccessRsvpGroup(json))
         } else {
           dispatch(errorLogin('Invalid email address'))
         }
@@ -50,7 +50,7 @@ export const fetchRsvpGroup = (email) => {
   }
 
   return dispatch => {
-    dispatch(requestRsvpGroup());
+    dispatch(getRsvpGroup());
     return setTimeout(fetchData.bind(this, dispatch), 1000);
   };
 }

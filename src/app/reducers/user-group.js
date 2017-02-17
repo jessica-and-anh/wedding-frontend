@@ -1,5 +1,5 @@
 import {
-  RECEIVE_RSVP_GROUP,
+  GET_SUCCESS_RSVP_GROUP,
   UPDATE_ATTENDING_DAY,
   UPDATE_NOTE,
   UPDATE_DIET,
@@ -13,7 +13,7 @@ const initialState = {
 
 const userGroup = (state = initialState, action) => {
   switch (action.type) {
-    case RECEIVE_RSVP_GROUP:
+    case GET_SUCCESS_RSVP_GROUP:
       return Object.assign({}, state, action.userGroup);
 
     case UPDATE_ATTENDING_DAY:

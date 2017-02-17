@@ -6,7 +6,8 @@ import '../../../../stylesheets/components/modals/rsvp/rsvp-details.css';
 import {
   updateAttendingDay,
   updateNote,
-  updateDiet
+  updateDiet,
+  LODGING_REQUESTED,
 } from '../../../actions/rsvp-details';
 
 import DropDownMenu from 'material-ui/DropDownMenu';
@@ -47,7 +48,8 @@ class RsvpDetails extends Component {
 
   onDayCheck(evt, isInputChecked) {
     const day = evt.target.name;
-    this.dispatch(updateAttendingDay(day, isInputChecked));
+    const attendingValue = isInputChecked ? LODGING_REQUESTED : null;
+    this.dispatch(updateAttendingDay(day, attendingValue));
   }
 
   onNoteChange(evt, text) {
@@ -108,7 +110,7 @@ class RsvpDetails extends Component {
               <DaySelection
                 day="friday"
                 image={friday}
-                hasLodging={lodging_friday}
+                hasLodging={lodging_friday != null}
                 onCheck={this.onDayCheck}
               />
             }
@@ -116,24 +118,24 @@ class RsvpDetails extends Component {
             <DaySelection
               day="saturday"
               image={saturday}
-              hasLodging={lodging_saturday}
+              hasLodging={lodging_saturday != null}
               onCheck={this.onDayCheck}
             />
 
             <DaySelection
               day="sunday"
               image={sunday}
-              hasLodging={lodging_sunday}
+              hasLodging={lodging_sunday != null}
               onCheck={this.onDayCheck}
             />
           </div>
         </div>
 
         <div className="extra-preferences">
-          <p className="details-prompt">Anything else we should know?</p>
+          <p className="details-prompt">Any song requests?</p>
           <div className="extra-preferences-textarea">
             <TextField
-              hintText="Leave us a note"
+              hintText="Tell us your favorite song to dance to"
               fullWidth={true}
               multiLine={true}
               rows={1}

@@ -1,5 +1,5 @@
 import {
-  RECEIVE_RSVP_GROUP,
+  GET_SUCCESS_RSVP_GROUP,
   UPDATE_ATTENDING_STATUS,
   TOGGLE_EMAIL_EDIT_STATE,
   UPDATE_USER_EMAIL
@@ -9,7 +9,7 @@ const initialState = [];
 
 const users = (state = initialState, action) => {
   switch (action.type) {
-    case RECEIVE_RSVP_GROUP:
+    case GET_SUCCESS_RSVP_GROUP:
       return action.users.map((user) => {
         return Object.assign({}, user, {
           isEditing: false,
