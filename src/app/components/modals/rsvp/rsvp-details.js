@@ -135,7 +135,7 @@ class RsvpDetails extends Component {
           <p className="details-prompt">Any song requests?</p>
           <div className="extra-preferences-textarea">
             <TextField
-              hintText="Tell us your favorite song to dance to"
+              hintText="Tell us your favorite song"
               fullWidth={true}
               multiLine={true}
               rows={1}

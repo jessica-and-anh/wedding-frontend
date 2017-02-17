@@ -80,6 +80,11 @@ hr.attendee-hr {
   text-align: center;
 }
 
+.tips-to-prepare-square h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .rausch-background {
   background-color: #f57670;
   color: #fff;

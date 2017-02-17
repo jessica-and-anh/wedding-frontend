@@ -36,11 +36,12 @@ const muiTheme = getMuiTheme({
 
 const Application = React.createClass({
   render() {
+    const pathname = this.props.location.pathname;
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
           <div className="App">
-            <HeaderNav />
+            <HeaderNav pathname={pathname} />
             {this.props.children}
             <Dialog />
           </div>

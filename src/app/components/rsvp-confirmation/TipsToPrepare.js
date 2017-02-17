@@ -2,6 +2,13 @@ import React, { PropTypes } from 'react';
 import cx from 'classnames';
 import AddToCalendar from '../add-to-calendar';
 import '../../../stylesheets/components/rsvp-confirmation.css';
+import Event from 'material-ui/svg-icons/action/event';
+import GolfCourse from 'material-ui/svg-icons/places/golf-course';
+
+const iconStyle = {
+  width: 60,
+  height: 60,
+};
 
 const TIP_SQUARES = [
   [
@@ -15,30 +22,15 @@ const TIP_SQUARES = [
       addToCalendar: (
         <AddToCalendar />
       ),
+      icon: <Event color="#666" style={iconStyle} />
     },
     {
       header: 'Read about our venue and lodging',
       linkText: 'Learn more',
       url: 'http://chaletviewlodge.com/',
+      icon: <GolfCourse color="#666" style={iconStyle} />
     },
-  ],
-  [
-    {
-      header: 'TODO: fix link! Plan what to bring for the weekend',
-      linkText: 'Learn more',
-      url: 'todo',
-    },
-    {
-      header: 'Visit our registry?!? TODO change this!',
-      linkText: 'Learn more',
-      url: 'http://chaletviewlodge.com/',
-    },
-    {
-      header: 'Another todo placeholder',
-      isRausch: true,
-      headerOnly: true,
-    },
-  ],
+  ]
 ];
 
 
@@ -52,6 +44,7 @@ function TipToPrepareSquare({ icon, headerOnly, header, linkText, url, isRausch,
   }
   return (
     <div className="tips-to-prepare-square">
+      {icon}
       <h2 className="space-top-3 space-5">{header}</h2>
       {url && <a className="styled-link" href={url} target="_blank">{linkText}</a>}
       {addToCalendar}
@@ -60,7 +53,7 @@ function TipToPrepareSquare({ icon, headerOnly, header, linkText, url, isRausch,
 }
 
 TipToPrepareSquare.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   headerOnly: PropTypes.bool,
   header: PropTypes.string.isRequired,
   linkText: PropTypes.string,

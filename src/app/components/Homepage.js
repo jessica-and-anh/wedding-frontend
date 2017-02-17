@@ -22,30 +22,30 @@ class Homepage extends Component {
       <div>
         <Hero />
         <Cta />
-        <section className="bride-and-groom scrollable">
+        <section className="bride-and-groom scrollable" id="bride-and-groom">
           <Element name="bride-and-groom" className="scroll-to-wrapper">
             <About />
             <Timeline />
           </Element>
         </section>
-        <section className="wedding-party scrollable">
+        <section className="wedding-party scrollable" id="wedding-party">
           <Element name="wedding-party" className="scroll-to-wrapper">
             <Bridesmaids />
             <Groomsmen />
             <OtherParty />
           </Element>
         </section>
-        <section className="carousel scrollable">
+        <section className="carousel scrollable" id="carousel">
           <Element name="photos" className="scroll-to-wrapper">
             <Carousel />
           </Element>
         </section>
-        <section className="the-day-of scrollable">
+        <section className="the-day-of scrollable" id="the-day-of">
           <Element name="the-day-of" className="scroll-to-wrapper">
             <DayOf />
           </Element>
         </section>
-        <section className="registry scrollable">
+        <section className="registry scrollable" id="registry">
           <Element name="registry" className="scroll-to-wrapper">
             <Registry />
           </Element>

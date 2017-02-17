@@ -8,7 +8,7 @@ import logo from '../../images/logo.png';
 
 const ScrollLink = Scroll.Link;
 
-const SCROLLABLE_HEADER_NAV_ANCHORS = [
+const HEADER_NAV_ANCHORS = [
   {
     text: 'BRIDE & GROOM',
     anchorId: 'bride-and-groom',
@@ -52,6 +52,14 @@ export function HeaderNavScrollableAnchor({ text, anchorId }) {
   );
 }
 
+export function HeaderNavAnchor({ text, anchorId }) {
+  return (
+    <li className="nav-item">
+      <a href={`/#${anchorId}`} className="nav-item-anchor">{text}</a>
+    </li>
+  );
+}
+
 class Nav extends Component {
 
   onRsvpClick(evt) {
@@ -60,6 +68,7 @@ class Nav extends Component {
   }
 
   render() {
+    const isHomepage = this.props.pathname === '/';
     return (
       <div>
         <nav className="nav">
@@ -71,14 +80,24 @@ class Nav extends Component {
             </li>
 
             {
-              SCROLLABLE_HEADER_NAV_ANCHORS.map((anchor, index) => {
+              HEADER_NAV_ANCHORS.map((anchor, index) => {
+                if (isHomepage) {
+                  return (
+                    <HeaderNavScrollableAnchor
+                      text={anchor.text}
+                      anchorId={anchor.anchorId}
+                      key={index}
+                    />
+                  )
+                }
+
                 return (
-                  <HeaderNavScrollableAnchor
+                  <HeaderNavAnchor
                     text={anchor.text}
                     anchorId={anchor.anchorId}
                     key={index}
                   />
-                );
+                )
               })
             }
 
