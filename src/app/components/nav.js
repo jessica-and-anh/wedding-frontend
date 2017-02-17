@@ -83,7 +83,7 @@ class Nav extends Component {
             }
 
             <li
-              className="nav-item"
+              className="nav-item nav-rsvp"
               onClick={this.onRsvpClick.bind(this)}
             >
               <a href="#">
