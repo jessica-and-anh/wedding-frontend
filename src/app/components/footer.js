@@ -29,8 +29,7 @@ class Footer extends Component {
           <div className="footer-column">
             <h4>JESSICA + ANH</h4>
             <a className="footer-link" href="#" onClick={this.onRsvpClick}>RSVP</a>
-            <a className="footer-link" href="#">FAQ</a>
-            <a className="footer-link last-link" target="_blank" href="mailto:atran.wynd@gmail.com,jessicamtai@gmail.com?Subject=Hello%20there">Contact Us</a>
+            <a className="footer-link" target="_blank" href="mailto:atran.wynd@gmail.com,jessicamtai@gmail.com?Subject=Hello%20there">Contact Us</a>
           </div>
 
           <div className="footer-column">
