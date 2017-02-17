@@ -19,7 +19,7 @@ class WeddingWeekend extends Component {
         <div className="day-of-content">
           <div className="day-of-item">
             <h3>WHERE</h3>
-            <img src={map} className="day-of-map" alt="Wedding weekend map" />
+            <img src={map} className="day-of-pic" alt="Wedding weekend map" />
             <p className="day-of-title">CHALET VIEW LODGE</p>
             <p className="day-of-desc">
               72056 CA-70
@@ -29,7 +29,7 @@ class WeddingWeekend extends Component {
           </div>
           <div className="day-of-item">
             <h3>WHAT</h3>
-            <img src={golf} className="day-of-cal" alt="Wedding weekend activities" />
+            <img src={golf} className="day-of-pic" alt="Wedding weekend activities" />
             <p className="day-of-title">ACTIVITIES</p>
             <ul className="day-of-desc">
               <li>Golf</li>
@@ -40,7 +40,7 @@ class WeddingWeekend extends Component {
           </div>
           <div className="day-of-item">
             <h3>WHEN</h3>
-            <img src={calendar} className="day-of-cal" alt="Wedding weekend calendar" />
+            <img src={calendar} className="day-of-pic" alt="Wedding weekend calendar" />
             <p className="day-of-title">LABOR DAY WEEKEND</p>
             <p className="day-of-desc">
               9/2/2017 - 9/4/2017
