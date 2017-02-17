@@ -23,7 +23,7 @@ const HEADER_NAV_ANCHORS = [
   },
   {
     text: 'WEDDING WEEKEND',
-    anchorId: 'the-day-of',
+    anchorId: 'wedding-weekend',
   },
   {
     text: 'REGISTRY',

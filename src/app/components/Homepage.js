@@ -35,13 +35,13 @@ class Homepage extends Component {
             <OtherParty />
           </Element>
         </section>
-        <section className="carousel scrollable" id="carousel">
+        <section className="carousel scrollable" id="photos">
           <Element name="photos" className="scroll-to-wrapper">
             <Carousel />
           </Element>
         </section>
-        <section className="the-day-of scrollable" id="the-day-of">
-          <Element name="the-day-of" className="scroll-to-wrapper">
+        <section className="the-day-of scrollable" id="wedding-weekend">
+          <Element name="wedding-weekend" className="scroll-to-wrapper">
             <DayOf />
           </Element>
         </section>
