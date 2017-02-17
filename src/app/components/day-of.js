@@ -13,7 +13,7 @@ class WeddingWeekend extends Component {
         <header>THE WEDDING WEEKEND</header>
         <p className="day-of-text">
           Our wedding is a destination wedding.
-          We invite everyone to come spend the weekend with us, from Saturday, 9/2 to Monday, 9/4.
+          We invite everyone to come spend Labor day weekend with us, from Saturday, 9/2 to Monday, 9/4.
           Since the venue is located north of Tahoe, there are various activites to do, so come prepared to have a relaxing outdoor getaway!
         </p>
         <div className="day-of-content">
