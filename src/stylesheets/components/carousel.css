@@ -20,6 +20,7 @@
 
 .carousel-left-arrow:hover {
   left: 50px;
+  padding-right: 20px;
 }
 
 .carousel-right-arrow {
@@ -29,4 +30,5 @@
 
 .carousel-right-arrow:hover {
   right: 50px;
+  padding-left: 20px;
 }

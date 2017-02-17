@@ -52,7 +52,11 @@
   border: 2px solid #aaa;
   border-radius: 10px;
   margin-bottom: 20px;
-  transition: border-width 0.2s ease;
+  transition: border-width 0.1s ease;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .payment-anchor:hover {

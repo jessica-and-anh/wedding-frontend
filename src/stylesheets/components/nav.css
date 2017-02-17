@@ -49,6 +49,12 @@
   width: 40px;
 }
 
+.nav-rsvp {
+  border: 1px solid #333;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
 .nav-height-holder {
   padding: 40px 0 10px;
 }
