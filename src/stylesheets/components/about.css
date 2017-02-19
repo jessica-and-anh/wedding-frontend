@@ -65,7 +65,15 @@
   }
 
   .passage {
-    width: 80%;
+    width: 90%;
     margin-top: 30px;
+  }
+
+  .passage-text {
+    text-align: left;
+  }
+
+  .passage.groom {
+    padding-bottom: 30px;
   }
 }

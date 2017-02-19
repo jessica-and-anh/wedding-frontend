@@ -38,9 +38,10 @@
   height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 25px 25px;
+  padding: 10px 0;
 }
 
 .member.special {
@@ -63,5 +64,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .member {
+    margin: 0;
+    width: 150px;
+    height: 200px;
   }
 }
