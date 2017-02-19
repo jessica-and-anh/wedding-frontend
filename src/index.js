@@ -7,10 +7,10 @@ import configureStore from './app/containers/configure-store';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MediaQuery from 'react-responsive';
 
-import HeaderNav from './app/components/nav';
+import Navigation from './app/components/nav';
 import Dialog from './app/containers/dialog';
-
 import Homepage from './app/components/Homepage';
 import RsvpConfirmation from './app/containers/rsvp-confirmation';
 
@@ -41,7 +41,9 @@ const Application = React.createClass({
       <MuiThemeProvider muiTheme={muiTheme}>
         <Provider store={store}>
           <div className="App">
-            <HeaderNav pathname={pathname} />
+            <MediaQuery minDeviceWidth={1224}>
+              <Navigation pathname={pathname} />
+            </MediaQuery>
             {this.props.children}
             <Dialog />
           </div>

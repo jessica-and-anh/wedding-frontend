@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Scroll from 'react-scroll';
+import MediaQuery from 'react-responsive';
 import '../../stylesheets/components/App.css';
 
 import Hero from '../components/hero';
@@ -25,7 +26,7 @@ class Homepage extends Component {
         <section className="bride-and-groom scrollable" id="bride-and-groom">
           <Element name="bride-and-groom" className="scroll-to-wrapper">
             <About />
-            <Timeline />
+            <MediaQuery minDeviceWidth={1224}><Timeline /></MediaQuery>
           </Element>
         </section>
         <section className="wedding-party scrollable" id="wedding-party">
@@ -35,11 +36,13 @@ class Homepage extends Component {
             <OtherParty />
           </Element>
         </section>
-        <section className="carousel scrollable" id="photos">
-          <Element name="photos" className="scroll-to-wrapper">
-            <Carousel />
-          </Element>
-        </section>
+        <MediaQuery minDeviceWidth={1224}>
+          <section className="carousel scrollable" id="photos">
+            <Element name="photos" className="scroll-to-wrapper">
+              <Carousel />
+            </Element>
+          </section>
+        </MediaQuery>
         <section className="the-day-of scrollable" id="wedding-weekend">
           <Element name="wedding-weekend" className="scroll-to-wrapper">
             <DayOf />

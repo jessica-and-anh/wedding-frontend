@@ -68,3 +68,26 @@
   width: 200px;
   padding: 20px;
 }
+
+@media (max-width: 1224px) {
+  .get-money hr {
+    margin-left: 0;
+  }
+
+  .registry-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .registry-section {
+    margin-bottom: 40px;
+  }
+
+  .payment-anchor {
+    width: 80%;
+  }
+
+  .payment-vendor {
+    width: 80%;
+  }
+}

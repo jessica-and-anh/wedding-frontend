@@ -26,3 +26,11 @@
 .hero-rsvp-container {
   position: absolute;
 }
+
+@media (max-width: 1224px) {
+  .wedding-date {
+    width: 80%;
+    font-size: 80px;
+    margin-top: 30px;
+  }
+}

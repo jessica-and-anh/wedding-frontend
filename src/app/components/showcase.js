@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 import cx from 'classnames';
 import '../../stylesheets/components/showcase.css';
 
@@ -23,9 +24,9 @@ class Showcase extends Component {
     return (
       <section className="members">
         <header className={this.props.welcomeColor}>
-          { this.props.welcomeImageLeft && welcomeImage }
+          <MediaQuery minDeviceWidth={1224}>{ this.props.welcomeImageLeft && welcomeImage }</MediaQuery>
           <h1 className="members-welcome">{this.props.welcomeMessage}</h1>
-          { !this.props.welcomeImageLeft && welcomeImage }
+          <MediaQuery minDeviceWidth={1224}>{ !this.props.welcomeImageLeft && welcomeImage }</MediaQuery>
         </header>
         <ul className="members-headshots">
           {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 import cx from 'classnames';
 import '../../stylesheets/components/about.css';
 
@@ -44,7 +45,9 @@ class About extends Component {
 
     return (
       <section className="about">
-        <img src={ringsAndHeart} className="rings-and-heart" alt="Rings and heart" />
+        <MediaQuery minDeviceWidth={1224}>
+          <img src={ringsAndHeart} className="rings-and-heart" alt="Rings and heart" />
+        </MediaQuery>
         <div className="about-container max-width">
           <Passage
             person="bride"

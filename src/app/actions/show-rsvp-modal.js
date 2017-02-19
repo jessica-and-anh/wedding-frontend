@@ -5,7 +5,7 @@ import RsvpContent from '../containers/modals/rsvp-content';
 
 export const showRsvpPasscodeModal = () => {
   const passcodeModalProps = {
-    modalType: 'rsvp',
+    modalType: 'passcode',
     modalProps: {
       title: 'RSVP Now',
       content: <RsvpPasscode />,

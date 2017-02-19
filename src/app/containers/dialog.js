@@ -25,13 +25,16 @@ const mapStateToProps = (state) => {
     initialUsers: modalProps.initialUsers,
     userGroup,
     users,
+    modalType,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onDialogClose: (userGroup, users) => {
-      dispatch(resetUsersToInitialState(userGroup, users));
+    onDialogClose: (modalType, userGroup, users) => {
+      if (modalType === 'rsvp') {
+        dispatch(resetUsersToInitialState(userGroup, users));
+      }
       dispatch(hideModal());
     },
 

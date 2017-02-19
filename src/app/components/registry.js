@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 import '../../stylesheets/components/registry.css';
 
 import hongBao from '../../images/hong-bao.png';
@@ -19,14 +20,16 @@ class Registry extends Component {
               We are very thankful to have a fully stocked kitchen and home.
               In lieu of a traditional registry, we would be very appreciative of a cash contribution towards our honeymoon.
             </p>
-            <p className="registry-text">
-              Please visit the various options on the right.
-            </p>
-            <p className="registry-text">
-              Otherwise, we graciously accept Hong Bao as well!
-              <br />
-              <img className="hong-bao" src={hongBao} alt="Hong bao" />
-            </p>
+            <MediaQuery minDeviceWidth={1224}>
+              <p className="registry-text">
+                Please visit the various options on the right.
+              </p>
+              <p className="registry-text">
+                Otherwise, we graciously accept Hong Bao as well!
+                <br />
+                <img className="hong-bao" src={hongBao} alt="Hong bao" />
+              </p>
+            </MediaQuery>
           </div>
           <div className="registry-section payments">
             <a className="payment-anchor" target="_blank" href="https://venmo.com/atran-wynd"><img className="payment-vendor" src={venmo} alt="Venmo" /></a>

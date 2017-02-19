@@ -30,8 +30,9 @@ class SimpleDialog extends Component {
       onDialogClose,
       initialUserGroup,
       initialUsers,
+      modalType,
     } = this.props;
-    onDialogClose(initialUserGroup, initialUsers);
+    onDialogClose(modalType, initialUserGroup, initialUsers);
   }
 
   render() {

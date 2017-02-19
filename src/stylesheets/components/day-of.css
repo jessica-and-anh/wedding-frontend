@@ -61,3 +61,13 @@
   color: #fff;
   text-align: center;
 }
+
+@media (max-width: 1224px) {
+  .day-of-text {
+    width: 80%;
+  }
+
+  .day-of-content {
+    padding-bottom: 50px;
+  }
+}

@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .other-party-images {
@@ -31,4 +32,15 @@
 
 .description-text {
   color: #aaa;
+}
+
+@media (max-width: 1224px) {
+  .other-party-images {
+    flex-direction: column;
+  }
+
+  .other-party-image {
+    width: 100%;
+    height: 100%;
+  }
 }
