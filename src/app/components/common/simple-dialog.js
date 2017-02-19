@@ -13,6 +13,7 @@ class SimpleDialog extends Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onClose = this.onClose.bind(this);
   }
 
   onSubmit() {
@@ -24,10 +25,18 @@ class SimpleDialog extends Component {
     onDialogSubmit(userGroup, users);
   }
 
+  onClose() {
+    const {
+      onDialogClose,
+      initialUserGroup,
+      initialUsers,
+    } = this.props;
+    onDialogClose(initialUserGroup, initialUsers);
+  }
+
   render() {
     const {
       cancelText,
-      onDialogClose,
       submitText,
       title,
       isOpen,
@@ -49,7 +58,7 @@ class SimpleDialog extends Component {
       <FlatButton
         label={cancelText}
         primary={false}
-        onTouchTap={onDialogClose}
+        onTouchTap={this.onClose}
       />,
       <FlatButton
         label={submitText}
@@ -65,7 +74,7 @@ class SimpleDialog extends Component {
         actions={actions}
         modal={false}
         open={isOpen}
-        onRequestClose={onDialogClose}
+        onRequestClose={this.onClose}
         autoScrollBodyContent={true}
         children={content}
         contentStyle={customContentStyle}

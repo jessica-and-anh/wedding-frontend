@@ -4,7 +4,8 @@ import {
   UPDATE_NOTE,
   UPDATE_DIET,
   TOGGLE_ADDRESS_EDIT_STATE,
-  UPDATE_ADDRESS
+  UPDATE_ADDRESS,
+  RESET_RSVP_GROUP,
 } from '../actions/constants';
 
 const initialState = {
@@ -40,6 +41,9 @@ const userGroup = (state = initialState, action) => {
       return Object.assign({}, state, {
         [action.field]: action.text,
       });
+
+    case RESET_RSVP_GROUP:
+      return Object.assign({}, action.userGroup);
 
     default:
       return state;

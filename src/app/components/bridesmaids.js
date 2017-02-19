@@ -3,7 +3,7 @@ import '../../stylesheets/components/bridesmaids.css';
 
 import Showcase from './showcase';
 
-import bridesmaids from '../../images/bridesmaids.png';
+import bridesmaids from '../../images/bridesmaids.jpg';
 import vanessa from '../../images/bridesmaids/vanessa.png';
 import angie from '../../images/bridesmaids/angie.png';
 import hanna from '../../images/bridesmaids/hanna.png';

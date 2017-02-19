@@ -22,8 +22,12 @@ const mapDispatchToProps = (dispatch) => {
     onLoadWithRsvpCode: (code) => {
       dispatch(fetchRsvpGroup(code, false));
     },
-    onRsvpClick: (code) => {
-      dispatch(showRsvpContentModal());
+    onRsvpClick: (userGroup, users) => {
+      const json = {
+        userGroup,
+        users,
+      };
+      dispatch(showRsvpContentModal(json));
     },
     onRsvpSubmit: (userGroup) => {
       dispatch(submitPostRsvpGroup(userGroup));

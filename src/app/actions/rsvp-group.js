@@ -6,7 +6,8 @@ import {
   GET_SUCCESS_RSVP_GROUP,
   POST_RSVP_GROUP,
   POST_SUCCESS_RSVP_GROUP,
-  ERROR_RSVP_GROUP
+  ERROR_RSVP_GROUP,
+  RESET_RSVP_GROUP,
 } from './constants';
 import { API_DOMAIN } from '../constants/paths';
 import { getRsvpGroupUrl, postRsvpGroupUrl, sanitizePostData } from '../constants/helpers';
@@ -47,9 +48,17 @@ export const errorRsvpGroup = (err) => {
   };
 };
 
+export const resetUsersToInitialState = ( user_group, users ) => {
+  return {
+    type: RESET_RSVP_GROUP,
+    userGroup: user_group,
+    users,
+  };
+};
+
 function canShowRsvpContent(json, dispatch) {
   if (Object.keys(json.userGroup).length > 0) {
-    dispatch(showRsvpContentModal());
+    dispatch(showRsvpContentModal(json));
   }
 }
 

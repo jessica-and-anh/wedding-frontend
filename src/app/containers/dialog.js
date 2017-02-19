@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { hideModal } from '../actions/modal';
-import { submitPostRsvpGroup } from '../actions/rsvp-group';
+import { submitPostRsvpGroup, resetUsersToInitialState } from '../actions/rsvp-group';
 
 import SimpleDialog from '../components/common/simple-dialog';
 
+/*
+ * TODO: Refactor this container as it's been polluted.
+**/
 const mapStateToProps = (state) => {
   const {
     modalType,
@@ -18,6 +21,8 @@ const mapStateToProps = (state) => {
     content: modalProps.content,
     actionable: modalProps.actionable,
     disableSubmit: modalProps.disableSubmit,
+    initialUserGroup: modalProps.initialUserGroup,
+    initialUsers: modalProps.initialUsers,
     userGroup,
     users,
   };
@@ -25,7 +30,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onDialogClose: () => {
+    onDialogClose: (userGroup, users) => {
+      dispatch(resetUsersToInitialState(userGroup, users));
       dispatch(hideModal());
     },
 

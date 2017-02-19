@@ -2,7 +2,8 @@ import {
   GET_SUCCESS_RSVP_GROUP,
   UPDATE_ATTENDING_STATUS,
   TOGGLE_EMAIL_EDIT_STATE,
-  UPDATE_USER_EMAIL
+  UPDATE_USER_EMAIL,
+  RESET_RSVP_GROUP,
 } from '../actions/constants';
 
 const initialState = [];
@@ -45,6 +46,9 @@ const users = (state = initialState, action) => {
         }
         return user;
       });
+
+    case RESET_RSVP_GROUP:
+      return Array.from(action.users);
 
     default:
       return state;

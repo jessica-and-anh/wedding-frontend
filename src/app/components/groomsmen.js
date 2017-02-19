@@ -3,7 +3,7 @@ import '../../stylesheets/components/groomsmen.css';
 
 import Showcase from './showcase';
 
-import groomsmen from '../../images/groomsmen.png';
+import groomsmen from '../../images/groomsmen.jpg';
 import stephan from '../../images/groomsmen/stephan.png';
 import allen from '../../images/groomsmen/allen.png';
 import anhang from '../../images/groomsmen/anhang.png';

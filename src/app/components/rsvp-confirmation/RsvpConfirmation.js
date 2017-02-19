@@ -7,6 +7,20 @@ import TipsToPrepare from './TipsToPrepare';
 import '../../../stylesheets/components/rsvp-confirmation.css';
 
 export default class RsvpConfirmation extends Component {
+  constructor(props) {
+    super(props);
+    this.onChangeRsvp = this.onChangeRsvp.bind(this);
+  }
+
+  onChangeRsvp() {
+    const {
+      onRsvpClick,
+      userGroup,
+      users,
+    } = this.props;
+    onRsvpClick(userGroup, users);
+  }
+
   componentWillMount() {
     const { users, code, onLoadWithRsvpCode, onRouteToHomepage } = this.props;
     if (code) {
@@ -17,7 +31,7 @@ export default class RsvpConfirmation extends Component {
   }
 
   render() {
-    const { userGroup, users, onRsvpClick } = this.props;
+    const { userGroup, users } = this.props;
     if (users.length === 0) return null;
 
     const totalAttendees = users
@@ -54,7 +68,7 @@ export default class RsvpConfirmation extends Component {
             </div>
             <div className="text-center">
               <FlatButton
-                onClick={onRsvpClick}
+                onClick={this.onChangeRsvp}
                 default
               >
                 Want to change something?
