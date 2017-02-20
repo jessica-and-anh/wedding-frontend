@@ -12,13 +12,8 @@ class OtherParty extends Component {
       <section className="other-party">
         <header>And of course, the dogs and Brian</header>
         <div className="other-party-images">
-          <img src={dogs} className="other-party-image" alt="baoBao and Tira" />
-          <MediaQuery maxDeviceWidth={1223}>
-            <div className="other-party-descriptions max-width">
-              <p className="description-text">baoBao and Tira,<br />ring and flower dogs</p>
-              <p className="description-text">Brian, the officiant</p>
-            </div>
-          </MediaQuery>
+          <img src={dogs} className="other-party-image" alt="baoBao and Tira, ring and flower dogs" />
+
           <img src={brian} className="other-party-image" alt="Brian, the officiant" />
         </div>
         <MediaQuery minDeviceWidth={1224}>
