@@ -65,12 +65,11 @@
 @media (max-width: 1224px) {
   .day-of-text {
     width: 80%;
-    margin-bottom: 20px;
     padding: 20px 0;
     min-height: 300px;
   }
 
   .day-of-content {
-    padding-bottom: 50px;
+    padding: 50px 0;
   }
 }
