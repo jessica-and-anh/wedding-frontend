@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import '../../stylesheets/components/registry.css';
 
-import hongBao from '../../images/hong-bao.png';
 import venmo from '../../images/venmo.png';
 import paypal from '../../images/paypal.png';
 import amazon from '../../images/amazon.png';
@@ -23,11 +22,6 @@ class Registry extends Component {
             <MediaQuery minDeviceWidth={1224}>
               <p className="registry-text">
                 Please visit the various options on the right.
-              </p>
-              <p className="registry-text">
-                Otherwise, we graciously accept Hong Bao as well!
-                <br />
-                <img className="hong-bao" src={hongBao} alt="Hong bao" />
               </p>
             </MediaQuery>
           </div>
