@@ -7,17 +7,6 @@
   align-items: center;
 }
 
-.cta.fixed {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.cta.fixed + .bride-and-groom {
-  margin-top: 25px;
-}
-
 .rsvp-button {
   background: none;
   color: #fff;
@@ -35,4 +24,17 @@
   color: #333;
   border: 5px solid #fff;
   font-weight: 700;
+}
+
+@media (max-width: 1224px) {
+  .cta.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .cta.fixed + .bride-and-groom {
+    margin-top: 25px;
+  }
 }
