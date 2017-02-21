@@ -25,6 +25,11 @@
   margin-top: 12%;
 }
 
+.attendees-and-lodging-confirmation {
+  display: flex;
+  margin-bottom: 30px;
+}
+
 .attendees-container {
   flex: 2;
 }
@@ -113,6 +118,10 @@ hr.attendee-hr {
 @media (max-width: 1224px) {
   .rsvp-confirmation__header {
     width: 100%;
+  }
+
+  .attendees-and-lodging-confirmation {
+    flex-direction: column;
   }
 
   .attendees-container {

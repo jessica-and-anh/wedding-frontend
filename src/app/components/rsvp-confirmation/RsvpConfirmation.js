@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import MediaQuery from 'react-responsive';
-import FlatButton from 'material-ui/FlatButton';
 import RsvpHero from './rsvp-hero';
 import AttendeesList from './AttendeesList';
 import Lodging from './Lodging';
@@ -43,13 +42,18 @@ export default class RsvpConfirmation extends Component {
     const guestsAttending = users.filter((user) => { return user.is_attending });
     const guestsNotAttending = users.filter((user) => { return !user.is_attending });
 
+    const buttonStyle = {
+      paddingLeft: '10px',
+      paddingRight: '10px',
+    };
+
     return (
       <div>
         <div>
           <RsvpHero isAnyoneAttending={isAnyoneAttending}/>
           <section className="rsvp-confirmation max-width">
             <h1 className="text-center space-top-4 space-5">Here’s a summary of what you told us:</h1>
-            <div className="flex">
+            <div className="attendees-and-lodging-confirmation">
               <div className="attendees-container">
                 <AttendeesList
                   subheader="ATTENDING"
@@ -69,12 +73,13 @@ export default class RsvpConfirmation extends Component {
               }
             </div>
             <div className="text-center">
-              <FlatButton
+              <RaisedButton
                 onClick={this.onChangeRsvp}
+                buttonStyle={buttonStyle}
                 default
               >
                 Want to change something?
-              </FlatButton>
+              </RaisedButton>
             </div>
           </section>
         </div>
