@@ -7,6 +7,17 @@
   align-items: center;
 }
 
+.cta.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.cta.fixed + .bride-and-groom {
+  margin-top: 25px;
+}
+
 .rsvp-button {
   background: none;
   color: #fff;

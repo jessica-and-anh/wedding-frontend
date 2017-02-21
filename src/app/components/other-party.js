@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MediaQuery from 'react-responsive';
 import '../../stylesheets/components/other-party.css';
 
 import dogs from '../../images/dogs.png';
