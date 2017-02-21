@@ -31,6 +31,10 @@ export default class RsvpConfirmation extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { userGroup, users } = this.props;
     if (users.length === 0) return null;

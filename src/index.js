@@ -14,6 +14,10 @@ import Dialog from './app/containers/dialog';
 import Homepage from './app/components/Homepage';
 import RsvpConfirmation from './app/containers/rsvp-confirmation';
 
+import 'scroll-restoration-polyfill';
+
+history.scrollRestoration = 'manual';
+
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
