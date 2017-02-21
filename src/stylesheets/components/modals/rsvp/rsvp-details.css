@@ -45,8 +45,8 @@
   flex-direction: column;
 }
 
-.rsvp-day-section.checked .rsvp-day-image-wrapper {
-  justify-content: flex-end;
+.rsvp-day-section.checked .rsvp-day {
+  margin-left: -71px;
 }
 
 .rsvp-day-image-wrapper {

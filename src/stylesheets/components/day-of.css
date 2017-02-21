@@ -48,8 +48,8 @@
 }
 
 .day-of-pic {
-  width: 60%;
-  height: 60%;
+  width: 200px;
+  height: 200px;
 }
 
 .day-of-title {
@@ -70,6 +70,6 @@
   }
 
   .day-of-content {
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
   }
 }
