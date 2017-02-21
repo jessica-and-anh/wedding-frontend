@@ -133,8 +133,9 @@ hr.attendee-hr {
   }
 
   .confirmation-attendee {
-    width: 100%;
+    width: 78%;
     margin-left: 0;
+    margin-right: 0;
   }
 
   .rsvp-lodging {
