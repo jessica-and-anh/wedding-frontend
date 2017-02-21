@@ -19,10 +19,6 @@ class Cta extends Component {
     window.addEventListener('scroll', this.onCTAScroll);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll');
-  }
-
   onRsvpClick(evt) {
     evt.preventDefault();
     this.dispatch(showRsvpPasscodeModal());

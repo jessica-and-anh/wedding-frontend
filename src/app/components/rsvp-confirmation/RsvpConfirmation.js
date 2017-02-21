@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import MediaQuery from 'react-responsive';
 import FlatButton from 'material-ui/FlatButton';
 import RsvpHero from './rsvp-hero';
 import AttendeesList from './AttendeesList';
 import Lodging from './Lodging';
 import TipsToPrepare from './TipsToPrepare';
+import RaisedButton from 'material-ui/RaisedButton';
 import '../../../stylesheets/components/rsvp-confirmation.css';
 
 export default class RsvpConfirmation extends Component {
@@ -78,6 +80,13 @@ export default class RsvpConfirmation extends Component {
         </div>
         <hr className="space-top-3 space-3 max-width" />
         <TipsToPrepare />
+        <MediaQuery maxDeviceWidth={1224}>
+          <RaisedButton
+            label="Back"
+            href="/"
+            fullWidth={true}
+          />
+        </MediaQuery>
       </div>
     );
   }

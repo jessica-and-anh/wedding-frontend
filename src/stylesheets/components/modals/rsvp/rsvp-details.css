@@ -60,3 +60,9 @@
 .rsvp-day {
   height: 66px;
 }
+
+@media (max-width: 1224px) {
+  .rsvp-details {
+    width: 100%;
+  }
+}

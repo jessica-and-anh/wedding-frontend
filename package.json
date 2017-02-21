@@ -13,6 +13,7 @@
     "key-mirror": "^1.0.1",
     "lodash": "^4.17.4",
     "material-ui": "^0.16.0",
+    "material-ui-fullscreen-dialog": "^0.2.0",
     "react": "^15.4.0",
     "react-add-to-calendar": "0.0.8",
     "react-dom": "^15.3.2",

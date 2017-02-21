@@ -74,9 +74,9 @@ export default function Lodging({ userGroup }) {
   const nights = requestedLodgingDays.length > 1 || requestedLodgingDays.length === 0 ? 'NIGHTS' : 'NIGHT';
 
   return (
-    <div className="rsvp-lodging text-center">
+    <div className="rsvp-lodging">
       <h2 className="space-2">REQUESTED ACCOMODATIONS</h2>
-      <h1 className="space-3">{requestedLodgingDays.length} {nights}</h1>
+      <h1 className="lodging-nights space-3">{requestedLodgingDays.length} {nights}</h1>
       <Calendars
         lodgingDays={lodgingDays}
         requestedLodgingDays={requestedLodgingDays}

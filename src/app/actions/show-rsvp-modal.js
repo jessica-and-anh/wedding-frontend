@@ -20,7 +20,7 @@ export const showRsvpContentModal = ({ userGroup, users }) => {
   const rsvpModalProps = {
     modalType: 'rsvp',
     modalProps: {
-      title: 'You’re invited to celebrate our wedding!',
+      title: 'You’re invited!',
       content: <RsvpContent />,
       initialUserGroup: Object.assign({}, userGroup),
       initialUsers: Array.from(users),

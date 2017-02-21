@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-
+import MediaQuery from 'react-responsive';
 import Dialog from 'material-ui/Dialog';
+import FullscreenDialog from 'material-ui-fullscreen-dialog';
 import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 /**
  * Dialog with action buttons. The actions are passed in as an array of React objects,
@@ -51,8 +53,17 @@ class SimpleDialog extends Component {
       maxWidth: 'none',
     };
 
+    const customAppBarStyle = {
+      background: 'linear-gradient(to right, #44a5c9, #44b8c9)',
+      paddingTop: '5px',
+    };
+
     const customBodyStyle = {
       padding: 0,
+    };
+
+    const customContainerStyle = {
+      padding: '10%',
     };
 
     const actions = actionable ? [
@@ -69,18 +80,43 @@ class SimpleDialog extends Component {
       />,
     ] : [];
 
+    const actionButton = actionable ? <RaisedButton
+      label={submitText}
+      onTouchTap={this.onSubmit}
+      disabled={disableSubmit}
+    /> : <div/>
+
     return (
-      <Dialog
-        title={title}
-        actions={actions}
-        modal={false}
-        open={isOpen}
-        onRequestClose={this.onClose}
-        autoScrollBodyContent={true}
-        children={content}
-        contentStyle={customContentStyle}
-        bodyStyle={customBodyStyle}
-      />
+      <MediaQuery minDeviceWidth={1224}>
+        {(matches) => {
+          if (matches) {
+            return <Dialog
+                    title={title}
+                    actions={actions}
+                    modal={false}
+                    open={isOpen}
+                    onRequestClose={this.onClose}
+                    autoScrollBodyContent={true}
+                    children={content}
+                    contentStyle={customContentStyle}
+                    bodyStyle={customBodyStyle}
+                  />;
+          } else {
+            return <FullscreenDialog
+                    title={title}
+                    actionButton={actionButton}
+                    modal={false}
+                    open={isOpen}
+                    onRequestClose={this.onClose}
+                    autoScrollBodyContent={true}
+                    children={content}
+                    appBarStyle={customAppBarStyle}
+                    containerStyle={customContainerStyle}
+                  />;
+          }
+        }}
+      </MediaQuery>
+
     );
   }
 }

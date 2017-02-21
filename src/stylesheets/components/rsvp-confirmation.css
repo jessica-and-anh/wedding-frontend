@@ -30,6 +30,7 @@
 }
 
 .rsvp-lodging {
+  text-align: center;
   flex: 1;
 }
 
@@ -107,4 +108,35 @@ hr.attendee-hr {
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+}
+
+@media (max-width: 1224px) {
+  .rsvp-confirmation__header {
+    width: 100%;
+  }
+
+  .attendees-container {
+    margin-bottom: 30px;
+  }
+
+  .confirmation-attendee-list {
+    flex-direction: column;
+  }
+
+  .confirmation-attendee {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .rsvp-lodging {
+    text-align: left;
+  }
+
+  .tips-to-prepare-square {
+    margin-bottom: 20px;
+  }
+
+  .lodging-nights {
+    text-align: center;
+  }
 }
