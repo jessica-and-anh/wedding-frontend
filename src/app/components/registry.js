@@ -14,14 +14,10 @@ class Registry extends Component {
             <header>REGISTRY</header>
             <hr />
             <p className="registry-text">
-              We are very thankful to have a fully stocked kitchen and home.
-              In lieu of a traditional registry, we would be very appreciative of a cash contribution towards our honeymoon.
+              Dear friends and family,<br /><br />
+              We’ve done a bit of window shopping to find our favorite stores. We would be very grateful and appreciative to receive gifts, but having you come celebrate with us means more than utensils or blenders.<br /><br />
+              If you would like to help us start our life marathon, please take a look at our registries.
             </p>
-            <MediaQuery minDeviceWidth={1224}>
-              <p className="registry-text">
-                Please visit the various options on the right.
-              </p>
-            </MediaQuery>
           </div>
           <div className="registry-section payments">
             <a className="payment-anchor" target="_blank" href="https://www.amazon.com/wedding/anh-tran-jessica-tai-chalet-view-lodge-september-2017/registry/2G6ZHB706PXGU"><img className="payment-vendor" src={amazon} alt="Amazon" /></a>
