@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
 import { hideModal } from '../actions/modal';
 import { submitPostRsvpGroup, resetUsersToInitialState } from '../actions/rsvp-group';
 
@@ -40,10 +39,6 @@ const mapDispatchToProps = (dispatch) => {
 
     onDialogSubmit: (userGroup, users) => {
       dispatch(submitPostRsvpGroup(userGroup, users));
-    },
-
-    onRouteToConfirmation: () => {
-      dispatch(push('/rsvp-confirmation'));
     },
   };
 };

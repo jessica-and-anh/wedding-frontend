@@ -43,11 +43,6 @@ class Attendee extends Component {
         >
           {initial}
         </Avatar>
-        <Avatar
-          backgroundColor="white"
-          size={54}
-          className="attendee-avatar-bg"
-        />
 
         <div className="attendee-data">
           {

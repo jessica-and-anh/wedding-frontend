@@ -101,7 +101,9 @@ export const submitPostRsvpGroup = (userGroup, users) => {
     })
       .then(response => response.data)
       .then(json => dispatch(postSuccessRsvpGroup(json)))
-      .then(json => dispatch(push(`/rsvp-confirmation/${json.userGroup.code}`)))
+      .then((json) => {
+        dispatch(push(`/rsvp-confirmation/${json.userGroup.code}`));
+      })
       .then(dispatch(hideModal()))
       .catch(err => dispatch(errorRsvpGroup(err)));
   }

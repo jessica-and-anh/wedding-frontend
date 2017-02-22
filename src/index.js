@@ -29,7 +29,6 @@ function logPageView() {
   ReactGA.pageview(window.location.pathname);
 }
 
-
 const store = configureStore();
 
 const muiTheme = getMuiTheme({

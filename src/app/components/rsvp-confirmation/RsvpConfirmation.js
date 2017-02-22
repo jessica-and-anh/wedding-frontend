@@ -24,6 +24,7 @@ export default class RsvpConfirmation extends Component {
 
   componentWillMount() {
     const { users, code, onLoadWithRsvpCode, onRouteToHomepage } = this.props;
+
     if (code) {
       onLoadWithRsvpCode(code);
     } else if (users.length === 0) {

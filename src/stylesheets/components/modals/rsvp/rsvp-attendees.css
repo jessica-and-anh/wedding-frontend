@@ -31,18 +31,13 @@
 }
 
 .attendee-avatar {
-  position: absolute;
+  position: relative;
   z-index: 1;
   margin-left: -60px;
 }
 
-.attendee-avatar-bg {
-  position: absolute;
-  z-index: 0;
-  margin-left: -62px;
-}
-
 .attendee-data {
+  margin-left: 10px;
   width: 85%;
 }
 

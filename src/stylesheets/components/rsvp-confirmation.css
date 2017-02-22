@@ -111,8 +111,10 @@ hr.attendee-hr {
 .rsvp-confirmation__calendar {
   width: 66px;
   overflow: hidden;
-  display: flex;
-  justify-content: flex-end;
+}
+
+.rsvp-confirmation__calendar .rsvp-day {
+  margin-left: -71px;
 }
 
 @media (max-width: 1224px) {

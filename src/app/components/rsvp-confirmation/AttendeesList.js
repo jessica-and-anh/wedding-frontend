@@ -26,11 +26,7 @@ export default function AttendeesList({
                 >
                   {initial}
                 </Avatar>
-                <Avatar
-                  backgroundColor="white"
-                  size={54}
-                  className="attendee-avatar-bg"
-                />
+
                 <div className="attendee-data">
                   <p className="attendee-name">{`${user.first_name} ${user.last_name}`}</p>
                   <p className="attendee-email">{user.email}</p>

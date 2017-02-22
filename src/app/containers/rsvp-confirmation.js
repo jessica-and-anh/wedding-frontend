@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     onLoadWithRsvpCode: (code) => {
       dispatch(fetchRsvpGroup(code, false));
     },
+
     onRsvpClick: (userGroup, users) => {
       const json = {
         userGroup,
@@ -29,9 +30,11 @@ const mapDispatchToProps = (dispatch) => {
       };
       dispatch(showRsvpContentModal(json));
     },
+
     onRsvpSubmit: (userGroup) => {
       dispatch(submitPostRsvpGroup(userGroup));
     },
+    
     onRouteToHomepage: () => {
       dispatch(push('/'));
     },

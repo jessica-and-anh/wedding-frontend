@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import _ from 'lodash';
 import fridayImage from '../../../images/rsvp/friday.png';
 import saturdayImage from '../../../images/rsvp/saturday.png';
 import sundayImage from '../../../images/rsvp/sunday.png';
@@ -65,12 +66,14 @@ export default function Lodging({ userGroup }) {
     lodging_saturday: saturday,
     lodging_sunday: sunday,
   } = userGroup;
+
   const lodgingDays = {
     friday,
     saturday,
     sunday,
   };
-  const requestedLodgingDays = Object.values(lodgingDays).filter((day) => { return day });
+
+  const requestedLodgingDays = _.values(lodgingDays).filter((day) => { return day });
   const nights = requestedLodgingDays.length > 1 || requestedLodgingDays.length === 0 ? 'NIGHTS' : 'NIGHT';
 
   return (
