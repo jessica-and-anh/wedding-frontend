@@ -1,3 +1,4 @@
 .members header.red {
   background: #f57670;
+  background: linear-gradient(to bottom right, #f57670, #f6a19d);
 }
