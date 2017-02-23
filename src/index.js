@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, Redirect, IndexRoute, browserHistory } from 'react-router';
 import ReactGA from 'react-ga';
 import configureStore from './app/containers/configure-store';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -13,6 +13,7 @@ import Navigation from './app/components/nav';
 import Dialog from './app/containers/dialog';
 import Homepage from './app/components/Homepage';
 import RsvpConfirmation from './app/containers/rsvp-confirmation';
+import Generic404 from './app/components/generic-404';
 
 import 'scroll-restoration-polyfill';
 
@@ -62,6 +63,8 @@ ReactDOM.render(
       <IndexRoute component={Homepage} />
       <Route path="rsvp-confirmation" component={RsvpConfirmation} />
       <Route path="rsvp-confirmation/:id" component={RsvpConfirmation} />
+      <Route path='/404' component={Generic404} />
+      <Redirect from='*' to='/404' />
     </Route>
   </Router>,
   document.getElementById('root')
