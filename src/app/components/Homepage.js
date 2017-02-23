@@ -12,7 +12,6 @@ import Groomsmen from '../components/groomsmen';
 import OtherParty from '../components/other-party';
 import Carousel from '../components/carousel';
 import DayOf from '../components/day-of';
-import Registry from '../components/registry';
 import Footer from '../components/footer';
 
 const Element = Scroll.Element;

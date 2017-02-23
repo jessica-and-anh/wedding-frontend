@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MediaQuery from 'react-responsive';
 import '../../stylesheets/components/registry.css';
 
 import amazon from '../../images/amazon.png';
