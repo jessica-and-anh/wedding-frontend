@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../../stylesheets/components/other-party.css';
 
-import dogs from '../../images/dogs.png';
-import brian from '../../images/brian.png';
+import dogs from '../../images/dogs.jpg';
+import brian from '../../images/brian.jpg';
 
 class OtherParty extends Component {
 
