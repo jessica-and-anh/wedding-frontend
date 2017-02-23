@@ -9,7 +9,7 @@
 .carousel-arrow {
   position: absolute;
   z-index: 10;
-  top: 230px;
+  top: 30%;
   cursor: pointer;
 }
 
