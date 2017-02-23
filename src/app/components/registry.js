@@ -14,9 +14,7 @@ class Registry extends Component {
             <header>REGISTRY</header>
             <hr />
             <p className="registry-text">
-              Dear friends and family,<br /><br />
-              We’ve done a bit of window shopping to find our favorite stores. We would be very grateful and appreciative to receive gifts, but having you come celebrate with us means more than utensils or blenders.<br /><br />
-              If you would like to help us start our life marathon, please take a look at our registries.
+              We are registered at the following locations.
             </p>
           </div>
           <div className="registry-section payments">

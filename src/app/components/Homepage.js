@@ -48,11 +48,6 @@ class Homepage extends Component {
             <DayOf />
           </Element>
         </section>
-        <section className="registry scrollable" id="registry">
-          <Element name="registry" className="scroll-to-wrapper">
-            <Registry />
-          </Element>
-        </section>
         <Footer />
       </div>
     );

@@ -25,10 +25,6 @@ const HEADER_NAV_ANCHORS = [
     text: 'WEDDING WEEKEND',
     anchorId: 'wedding-weekend',
   },
-  {
-    text: 'REGISTRY',
-    anchorId: 'registry',
-  }
 ];
 
 export function HeaderNavScrollableAnchor({ text, anchorId }) {
