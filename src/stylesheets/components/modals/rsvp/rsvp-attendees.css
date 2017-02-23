@@ -3,6 +3,13 @@
   padding: 20px;
 }
 
+.rsvp-attendees .error {
+  color: #D50000;
+  margin-top: 0;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
 .rsvp-attendees-prompt {
   margin-bottom: 15px;
 }
@@ -44,6 +51,7 @@
 .attendee-name {
   font-weight: 600;
   font-size: 20px;
+  margin-bottom: 3px;
 }
 
 .attendee-email {
@@ -71,7 +79,7 @@
 
 .group-address {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;
   margin-top: 10px;
 }
 

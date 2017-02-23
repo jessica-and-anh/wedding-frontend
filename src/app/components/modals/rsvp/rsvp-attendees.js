@@ -60,6 +60,8 @@ class RsvpAttendees extends Component {
       isEditing,
     } = this.props.userGroup;
 
+    const error = this.props.error;
+
     const cityInputStyle = {
       width: 150,
     };
@@ -150,11 +152,16 @@ class RsvpAttendees extends Component {
                           </div>
                         </div>
 
-                      : <div className="address-text">
-                          <p className="address line1">{address_line1}</p>
-                          <p className="address line2">{address_line2}</p>
-                          <p className="address line3">{`${city}, ${state} ${zipcode}`}</p>
-                        </div>
+                      : address_line1 ? <div className="address-text">
+                                          <p className="address line1">{address_line1}</p>
+                                          <p className="address line2">{address_line2}</p>
+                                          <p className="address line3">{city}, {state} {zipcode}</p>
+                                        </div>
+
+                                      : <div className="address-text">
+                                          <p className="address line1">Please enter an address</p>
+                                        </div>
+
 
           }
           <p className="address edit">
@@ -162,6 +169,10 @@ class RsvpAttendees extends Component {
               {isEditing ? 'done' : 'edit'}
             </a>
           </p>
+          {
+            error &&
+            <p className="error">Something went wrong, please try again.</p>
+          }
         </div>
       </section>
     );

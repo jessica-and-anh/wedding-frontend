@@ -9,6 +9,7 @@ class RsvpContent extends Component {
     const {
       userGroup,
       users,
+      error,
     } = this.props;
 
     return (
@@ -17,6 +18,7 @@ class RsvpContent extends Component {
           <RsvpAttendees
             userGroup={userGroup}
             users={users}
+            error={error}
           />
           <RsvpDetails
             userGroup={userGroup}

@@ -7,9 +7,14 @@ const mapStateToProps = (state) => {
     users,
   } = state.rsvp;
 
+  const {
+    error,
+  } = state.rsvp.request;
+
   return {
     userGroup,
     users,
+    error,
   };
 };
 

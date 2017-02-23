@@ -20,14 +20,16 @@ import saturday from '../../../../images/rsvp/saturday.png';
 import sunday from '../../../../images/rsvp/sunday.png';
 
 export function DaySelection({ day, image, hasLodging, onCheck }) {
+  const isCheckedByDefault = hasLodging;
+
   return (
-    <div className={cx('rsvp-day-section', {'checked': hasLodging})}>
+    <div className={cx('rsvp-day-section', {'checked': isCheckedByDefault})}>
       <label className="rsvp-day-image-wrapper" htmlFor={day}>
         <img src={image} className="rsvp-day" alt={day} />
       </label>
       <div className="attendee-staying">
         <Checkbox
-          defaultChecked={hasLodging}
+          defaultChecked={isCheckedByDefault}
           onCheck={onCheck}
           name={day}
           id={day}
@@ -106,7 +108,7 @@ class RsvpDetails extends Component {
           <p className="details-prompt">Which nights will your party stay?</p>
           <div className="overnight-preferences-checkboxes">
             {
-              tier === 0 &&
+              (tier === 0 || tier === 1) &&
               <DaySelection
                 day="friday"
                 image={friday}

@@ -58,7 +58,7 @@ class Attendee extends Component {
                           onChange={onEmailChange}
                           autoFocus
                         />
-                      : <p className="attendee-email">{email}</p>
+                      : <p className="attendee-email">{ email ? email : 'Please enter an email' }</p>
           }
 
           <p className={cx('email edit', { editing: isEditing })}>
