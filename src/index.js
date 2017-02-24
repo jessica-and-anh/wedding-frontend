@@ -17,7 +17,8 @@ import Generic404 from './app/components/generic-404';
 
 import 'scroll-restoration-polyfill';
 
-history.scrollRestoration = 'manual';
+// TODO: Might be necessary later
+// history.scrollRestoration = 'manual';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
