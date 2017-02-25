@@ -39,8 +39,9 @@ class About extends Component {
     ];
 
     const groomText = [
-      "Sed felis nunc, maximus non efficitur sed, tempor non ligula. Vivamus vel eleifend dolor, a auctor nibh. In fringilla sed orci at tristique. Vivamus pulvinar leo eget mauris fringilla, a tempus ipsum condimentum. Vestibulum bibendum vestibulum tellus. Vestibulum at massa at arcu laoreet pretium. Suspendisse convallis, justo nec laoreet consectetur, nulla nisl venenatis velit, eget lacinia ante nulla sodales metus. Vivamus a est in felis sagittis facilisis ac a arcu. Aliquam id consectetur purus. Suspendisse eu augue malesuada, porttitor velit vitae, venenatis ipsum.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus euismod finibus. Fusce et velit nunc. Sed vestibulum lectus tempus enim tempor, eget aliquet ipsum fringilla. Maecenas sed dictum nisl. Pellentesque dictum bibendum sapien, nec consequat metus dapibus nec. Pellentesque tortor turpis, dapibus et pretium sed, fringilla in mauris. Phasellus quis feugiat nisi. Duis vitae ullamcorper nunc. Suspendisse cursus sapien id dolor consequat, sed varius ligula malesuada. Aliquam erat volutpat. Nunc nec eleifend lectus. Vestibulum mattis nunc mi, sit amet porta enim malesuada ac. Aliquam erat volutpat.",
+      "I wouldn’t say the comb chicken hair is exactly what I was going for back then. Anyways, while Jessica insists that we were just platonic friends, I spent many months strategically courting her. We spent many hours watching our favorite shows together where I would gradually scoot closer. Having convinced her to use a GE to take a biology course with me meant many study sessions and many more opportunities to not study at all. By the way, who takes a biology course as a GE - talk about wrong signals.",
+      "During the moments I wasn’t weaving my way into her life, Jessica introduced me to many novel experiences such as cooking, photography, and actually studying. I never could get the last one down. From our different experiences growing up, we were able to learn from each other, sharing stories of our childhood. Learning about her Starcraft days sealed the deal for me.",
+      "Becoming each other’s best friend led to the amazing team we’ve become today. To all you guys out there, it is possible to graduate from the friend zone!"
     ]
 
     return (
