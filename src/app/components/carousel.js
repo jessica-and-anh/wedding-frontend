@@ -9,6 +9,7 @@ import carousel2 from '../../images/carousel/carousel-2.jpg';
 import carousel3 from '../../images/carousel/carousel-3.jpg';
 import carousel4 from '../../images/carousel/carousel-4.jpg';
 import carousel5 from '../../images/carousel/carousel-5.jpg';
+import carousel6 from '../../images/carousel/carousel-6.jpg';
 import leftArrow from '../../images/carousel/left-arrow.png';
 import rightArrow from '../../images/carousel/right-arrow.png';
 
@@ -66,6 +67,7 @@ class Carousel extends Component {
       carousel3,
       carousel4,
       carousel5,
+      carousel6,
     ];
 
     return (
