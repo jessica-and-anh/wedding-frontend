@@ -69,7 +69,7 @@ class RsvpDetails extends Component {
       lodging_friday,
       lodging_saturday,
       lodging_sunday,
-      diet,
+      vegetarian_count,
     } = this.props.userGroup;
 
     const { users } = this.props;
@@ -95,7 +95,7 @@ class RsvpDetails extends Component {
           <div className="meal-preferences-dropdown">
             <DropDownMenu
               maxHeight={280}
-              value={diet || 0}
+              value={vegetarian_count || 0}
               onChange={this.onDietChange}
             >
               {items}
