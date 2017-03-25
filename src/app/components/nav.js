@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
 import { showRsvpPasscodeModal } from '../actions/show-rsvp-modal';
 import Scroll from 'react-scroll';
 import '../../stylesheets/components/nav.css';
@@ -27,7 +28,7 @@ const HEADER_NAV_ANCHORS = [
   },
 ];
 
-export function HeaderNavScrollableAnchor({ text, anchorId }) {
+export function HeaderNavScrollableAnchor({ text, anchorId, logClick }) {
   return (
     <li
       className="nav-item"
@@ -40,27 +41,35 @@ export function HeaderNavScrollableAnchor({ text, anchorId }) {
         smooth={true}
         duration={500}
         isDynamic={true}
+        onClick={logClick}
       >
         {text}
       </ScrollLink>
     </li>
-
   );
 }
 
-export function HeaderNavAnchor({ text, anchorId }) {
+export function HeaderNavAnchor({ text, anchorId, logClick }) {
   return (
     <li className="nav-item">
-      <a href={`/#${anchorId}`} className="nav-item-anchor">{text}</a>
+      <a href={`/#${anchorId}`} className="nav-item-anchor" onClick={logClick}>{text}</a>
     </li>
   );
 }
 
 class Nav extends Component {
-
   onRsvpClick(evt) {
     evt.preventDefault();
     this.props.dispatch(showRsvpPasscodeModal());
+  }
+
+  logClick(text, subcategory) {
+    ReactGA.event({
+      category: 'header_nav',
+      action: 'click',
+      item: text,
+      subcategory,
+    });
   }
 
   render() {
@@ -83,6 +92,7 @@ class Nav extends Component {
                       text={anchor.text}
                       anchorId={anchor.anchorId}
                       key={index}
+                      logClick={this.logClick.bind(this, anchor.anchorId, 'scroll-link')}
                     />
                   )
                 }
@@ -92,6 +102,7 @@ class Nav extends Component {
                     text={anchor.text}
                     anchorId={anchor.anchorId}
                     key={index}
+                    logClick={this.logClick.bind(this, anchor.anchorId, 'link')}
                   />
                 )
               })

@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => {
     onRsvpSubmit: (userGroup) => {
       dispatch(submitPostRsvpGroup(userGroup));
     },
-    
+
     onRouteToHomepage: () => {
       dispatch(push('/'));
     },

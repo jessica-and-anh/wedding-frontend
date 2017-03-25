@@ -1,10 +1,22 @@
 import React, { Component, PropTypes } from 'react';
+import ReactGA from 'react-ga';
 import '../../../../stylesheets/components/modals/rsvp/rsvp-content.css';
 
 import RsvpAttendees from './rsvp-attendees';
 import RsvpDetails from './rsvp-details';
 
 class RsvpContent extends Component {
+  componentDidMount() {
+    this.logImpression();
+  }
+  logImpression() {
+    ReactGA.event({
+      category: 'rsvp_content_modal',
+      action: 'impression',
+      userGroup: this.props.userGroup,
+    });
+  }
+
   render() {
     const {
       userGroup,
