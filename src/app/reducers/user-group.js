@@ -29,7 +29,7 @@ const userGroup = (state = initialState, action) => {
 
     case UPDATE_DIET:
       return Object.assign({}, state, {
-        diet: action.count,
+        vegetarian_count: action.count,
       });
 
     case TOGGLE_ADDRESS_EDIT_STATE:
