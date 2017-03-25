@@ -25,7 +25,7 @@ import 'scroll-restoration-polyfill';
 injectTapEventPlugin();
 
 // Google analytics
-ReactGA.initialize('UA-000000-01');
+ReactGA.initialize('UA-96203413-1');
 function logPageView() {
   ReactGA.set({ page: window.location.pathname });
   ReactGA.pageview(window.location.pathname);
