@@ -13,7 +13,7 @@ class RsvpContent extends Component {
     ReactGA.event({
       category: 'rsvp_content_modal',
       action: 'impression',
-      userGroup: this.props.userGroup,
+      label: this.props.userGroup.code,
     });
   }
 

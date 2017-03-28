@@ -67,8 +67,7 @@ class Nav extends Component {
     ReactGA.event({
       category: 'header_nav',
       action: 'click',
-      item: text,
-      subcategory,
+      label: `${text}-${subcategory}`,
     });
   }
 
