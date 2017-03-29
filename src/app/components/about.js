@@ -43,7 +43,7 @@ export function Passage({ person, firstName, lastName, text }) {
         "when we bumped into Vanessa’s roommate and her roommate's friends. Anh was one of those " +
         "friends.",
       "When we met, Anh had his hair styled into spikes, sticking straight up like the comb " +
-        "of a chicken. He asked me what my major was (it was cognitive science at the time). " +
+        "of a chicken. He asked me what my major was. (It was cognitive science at the time.) " +
         "“Cog-what? Is that a major? I’m majoring in physci. I am going to be a doctor. Doctor " +
         "Tran.” Apparently, he believed his major was so well known that it could be abbreviated.",
       "Over the next year, on his quest to become a doctor, we became close friends. Anh " +
@@ -51,9 +51,9 @@ export function Passage({ person, firstName, lastName, text }) {
         "together studying and making late night Bcafe runs. When we weren’t cramming or eating, " +
         "we enjoyed watching anime or playing tennis together. I was too shy to want to play in " +
         "the center court of the UCLA Tennis Center (regardless if it were the only open court), " +
-        "but Anh would insist we play there in the middle of the stadium lights and have fun.",
+        "but Anh would insist we play there in the middle of the stadium lights and have fun. ",
       "I felt so lucky to have found a new lifelong friend who could easily make me laugh and " +
-        "relax as well be my fashion advisor. Maybe he was worth keeping around… little did I " +
+        "relax and also advise me on fashion. Maybe he was worth keeping around… little did I " +
         "know :)"
       ];
 

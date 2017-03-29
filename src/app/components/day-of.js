@@ -32,8 +32,11 @@ class WeddingWeekend extends Component {
             <img src={golf} className="day-of-pic" alt="Wedding weekend activities" />
             <p className="day-of-title">ACTIVITIES</p>
             <ul className="day-of-desc">
-              <li>Golf, Swimming,</li>
-              <li>Hiking, and Field Games</li>
+              <li>Golf, swimming,</li>
+              <li>hiking, field games,</li>
+              <li>bocce ball, hot tub,</li>
+              <li>volleyball, basketball,</li>
+              <li>brewery, and more!</li>
             </ul>
           </div>
           <div className="day-of-item">

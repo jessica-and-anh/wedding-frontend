@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import { connect } from 'react-redux';
+import ReactGA from 'react-ga';
 import { showRsvpPasscodeModal } from '../actions/show-rsvp-modal';
 import AddToCalendar from './add-to-calendar';
 
@@ -15,8 +16,17 @@ class Footer extends Component {
     this.onRsvpClick = this.onRsvpClick.bind(this);
   }
 
+  logClick() {
+    ReactGA.event({
+      category: 'rsvp',
+      action: 'click',
+      label: 'footer',
+    });
+  }
+
   onRsvpClick(evt) {
     evt.preventDefault();
+    this.logClick();
     this.dispatch(showRsvpPasscodeModal());
   }
 
