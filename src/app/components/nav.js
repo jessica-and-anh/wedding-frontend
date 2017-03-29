@@ -60,6 +60,11 @@ export function HeaderNavAnchor({ text, anchorId, logClick }) {
 class Nav extends Component {
   onRsvpClick(evt) {
     evt.preventDefault();
+    ReactGA.event({
+      category: 'rsvp',
+      action: 'click',
+      label: 'header',
+    });
     this.props.dispatch(showRsvpPasscodeModal());
   }
 
