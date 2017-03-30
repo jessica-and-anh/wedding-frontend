@@ -104,8 +104,8 @@ class RsvpDetails extends Component {
         </div>
 
         <div className="overnight-preferences">
-          <p className="details-prompt">Our wedding is a desintation wedding.</p>
-          <p className="details-prompt">Which nights will your party stay?</p>
+          <p className="details-prompt">Our destination wedding is Labor Day Weekend.</p>
+          <p className="details-prompt">Which nights will your party attend?</p>
           <div className="overnight-preferences-checkboxes">
             {
               (tier === 0 || tier === 1) &&
