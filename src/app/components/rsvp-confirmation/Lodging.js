@@ -39,7 +39,8 @@ function Calendars({ lodgingDays, requestedLodgingDays, tier }) {
             View on-site lodging options
           </a>.
         </p>
-
+        <br />
+        <br />
         {tier <= 1 &&
           <p className="text-center padding-left-4 padding-right-4">
             As part of the wedding rehearsal group, you will have first picks for lodging.
@@ -48,7 +49,6 @@ function Calendars({ lodgingDays, requestedLodgingDays, tier }) {
             your lodging request.
           </p>
         }
-        <br />
         {tier > 1 &&
           <p className="text-center padding-left-4 padding-right-4">
             Please book&nbsp;
