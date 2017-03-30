@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import MediaQuery from 'react-responsive';
+import _ from 'lodash';
+
 import RsvpHero from './rsvp-hero';
 import AttendeesList from './AttendeesList';
 import Lodging from './Lodging';
@@ -47,6 +49,20 @@ export default class RsvpConfirmation extends Component {
     const guestsAttending = users.filter((user) => { return user.is_attending });
     const guestsNotAttending = users.filter((user) => { return !user.is_attending });
 
+    const {
+      lodging_friday: friday,
+      lodging_saturday: saturday,
+      lodging_sunday: sunday,
+      tier,
+    } = userGroup;
+    const lodgingDays = {
+      friday,
+      saturday,
+      sunday,
+    };
+
+    const requestedLodgingDays = _.values(lodgingDays).filter((day) => { return day });
+
     const buttonStyle = {
       paddingLeft: '10px',
       paddingRight: '10px',
@@ -71,11 +87,18 @@ export default class RsvpConfirmation extends Component {
                   users={guestsNotAttending}
                   hasDivider
                 />
+                {requestedLodgingDays.length > 0 && guestsAttending.length === 0 &&
+                  <p className="error">
+                    You have requested lodging days, but no confirmed attendees. Please tell us who is joining.
+                  </p>
+                }
               </div>
 
-              {isAnyoneAttending &&
-                <Lodging userGroup={userGroup} />
-              }
+                <Lodging
+                  lodgingDays={lodgingDays}
+                  requestedLodgingDays={requestedLodgingDays}
+                  tier={tier}
+                />
             </div>
             <div className="text-center">
               <RaisedButton

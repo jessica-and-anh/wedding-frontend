@@ -58,6 +58,7 @@ class RsvpAttendees extends Component {
       state,
       zipcode,
       isEditing,
+      tier,
     } = this.props.userGroup;
 
     const error = this.props.error;
@@ -81,6 +82,16 @@ class RsvpAttendees extends Component {
         <p className="rsvp-attendees-prompt">
           Please confirm whether you and your party are attending.
         </p>
+        {tier === 0 &&
+          <p className="rsvp-attendees-prompt">
+            Note: Your presence is required for rehearsal on Friday.
+          </p>
+        }
+        {tier === 1 &&
+          <p className="rsvp-attendees-prompt">
+            Note: You are exclusively invited to be part of the rehearsal dinner on Friday (optional).
+          </p>
+        }
         <ul className="rsvp-attendee-list">
           {
             this.props.users.map((user, index) => {
