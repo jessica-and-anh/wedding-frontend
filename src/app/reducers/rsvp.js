@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import users from './users';
 import userGroup from './user-group';
+import lodging from './lodging';
 import {
   GET_RSVP_GROUP,
   GET_SUCCESS_RSVP_GROUP,
@@ -47,6 +48,7 @@ const rsvp = combineReducers({
   request,
   userGroup,
   users,
+  lodging,
 });
 
 export default rsvp;

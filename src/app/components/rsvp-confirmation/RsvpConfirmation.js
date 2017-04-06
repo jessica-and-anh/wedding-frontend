@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import RsvpHero from './rsvp-hero';
 import AttendeesList from './AttendeesList';
+import LodgingDetails from './lodging-details.js';
 import Lodging from './Lodging';
 import TipsToPrepare from './TipsToPrepare';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -39,7 +40,8 @@ export default class RsvpConfirmation extends Component {
   }
 
   render() {
-    const { userGroup, users } = this.props;
+    const { userGroup, users, lodging } = this.props;
+    console.log('rsvp confirmation props', this.props);
     if (users.length === 0) return null;
 
     const totalAttendees = users
@@ -53,7 +55,6 @@ export default class RsvpConfirmation extends Component {
       lodging_friday: friday,
       lodging_saturday: saturday,
       lodging_sunday: sunday,
-      tier,
     } = userGroup;
     const lodgingDays = {
       friday,
@@ -93,14 +94,23 @@ export default class RsvpConfirmation extends Component {
                   </p>
                 }
               </div>
-
                 <Lodging
                   lodgingDays={lodgingDays}
                   requestedLodgingDays={requestedLodgingDays}
-                  tier={tier}
+                  userGroup={userGroup}
+                  lodging={lodging}
+                  guestsAttending={guestsAttending}
                 />
             </div>
-            <div className="text-center">
+            <div>
+              <LodgingDetails
+                guestsAttending={guestsAttending}
+                lodging={lodging}
+                requestedLodgingDays={requestedLodgingDays}
+                userGroup={userGroup}
+              />
+            </div>
+            <div className="space-top-4 text-center">
               <RaisedButton
                 onClick={this.onChangeRsvp}
                 buttonStyle={buttonStyle}
@@ -128,6 +138,7 @@ export default class RsvpConfirmation extends Component {
 RsvpConfirmation.propTypes = {
   userGroup: PropTypes.object.isRequired,
   users: PropTypes.array.isRequired,
+  lodging: PropTypes.object,
   onRsvpClick: PropTypes.func.isRequired,
   onRouteToHomepage: PropTypes.func.isRequired,
 };
