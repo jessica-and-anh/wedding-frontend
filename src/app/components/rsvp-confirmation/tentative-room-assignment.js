@@ -98,10 +98,25 @@ export default function TentativeRoomAssignment({
       </p>
     );
   } else {
+    let leaderWillBookText = <span>Your room leader will call in to book your reserved room</span>;
+    const isLeaderInThisUserGroup =
+      guestsAttending.concat(guestsNotAttending).some((element, idx, array) => {
+        return element.id === leader_user.id;
+    })
+
+    if (isLeaderInThisUserGroup) {
+      leaderWillBookText = (
+        <span>
+          <strong>{leader_user.first_name},
+          please call in <a href="tel:+15308325528" className="styled-link">(530) 832-5528</a>&nbsp;
+          to book your group's reserved room</strong>
+        </span>
+      );
+    }
     detailParagraph = (
       <p>
-        There’s limited on-site accommodation, but we’ve blocked a room with your name on it!
-        Your room leader will call in to book your reserved room ({roomNumber}).
+        There’s limited on-site accommodation, but we’ve blocked a room with your name on it!&nbsp;
+        {leaderWillBookText} ({roomNumber}).
         You may extend your check-in and check-out dates.
         Please confirm and coordinate with your roomies if you have changes.
         {guestsNotAttendingIds.length > 0 &&
@@ -127,6 +142,8 @@ export default function TentativeRoomAssignment({
       </ol>
     );
   }
+
+
   return (
     <div >
       {detailParagraph}
