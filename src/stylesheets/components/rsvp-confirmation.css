@@ -123,6 +123,11 @@ hr.attendee-hr {
   left: 25%;
 }
 
+.error-text {
+  color: #D50000;
+  text-decoration: line-through;
+}
+
 @media (max-width: 1224px) {
   .rsvp-confirmation__header {
     width: 100%;

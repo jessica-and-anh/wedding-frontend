@@ -41,7 +41,6 @@ export default class RsvpConfirmation extends Component {
 
   render() {
     const { userGroup, users, lodging } = this.props;
-    console.log('rsvp confirmation props', this.props);
     if (users.length === 0) return null;
 
     const totalAttendees = users
@@ -105,6 +104,7 @@ export default class RsvpConfirmation extends Component {
             <div>
               <LodgingDetails
                 guestsAttending={guestsAttending}
+                guestsNotAttending={guestsNotAttending}
                 lodging={lodging}
                 requestedLodgingDays={requestedLodgingDays}
                 userGroup={userGroup}

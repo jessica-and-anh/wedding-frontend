@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
-import ReactGA from 'react-ga';
-import OtherLodgingOptions from './other-lodging-options.js';
+import TentativeRoomAssignment from './tentative-room-assignment.js';
 
 function LodgingDirections({ tier, guestsAttending }) {
   if (!guestsAttending) {
@@ -11,7 +10,7 @@ function LodgingDirections({ tier, guestsAttending }) {
   if (tier <= 1) {
     details = (
       <p>
-        As part of the wedding rehearsal group, you will have first picks for lodging.
+        As part of the wedding rehearsal group, you have first picks for lodging.
         Plan to arrive by Friday afternoon for rehearsal. Afterwards, we will provide dinner for
         you (exclusive to wedding rehearsal group).
       </p>
@@ -44,120 +43,18 @@ function LodgingDirections({ tier, guestsAttending }) {
   );
 }
 
-function logTentativeAssignmentException({ userGroupId, roomNumber }) {
-  ReactGA.exception({
-    description: `Incorrect housing assumption for usergroup ${userGroupId} and ` +
-                 `room number ${roomNumber}`,
-    fatal: false,
-  });
-}
+LodgingDirections.propTypes = {
+  guestsAttending: PropTypes.array.isRequired,
+  tier: PropTypes.number.isRequired,
+};
 
-function BookOnline({ guestsAttending }) {
-  if (guestsAttending.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="space-top-4">
-      <p>
-        At your earliest convenience,&nbsp;
-        <a
-          href="https://gc.synxis.com/rez.aspx?Hotel=67898&Chain=18924&template=RBE&shell=RBE"
-          className="styled-link"
-          target="_blank"
-        >
-          book your room online
-        </a>&nbsp;
-        with the special code <strong>"TAI"</strong>.
-      </p>
-
-    </div>
-  );
-}
-
-function TentativeRoomAssignment({
+export default function LodgingDetails({
+  guestsAttending,
+  guestsNotAttending,
   lodging,
   requestedLodgingDays,
-  guestsAttending,
-  userGroupId,
-  tier,
+  userGroup,
 }) {
-  const {
-    room_number: roomNumber,
-    room_type: roomType,
-    num_beds: numBeds,
-    max_occupancy: maxOccupancy,
-    roomies,
-  } = lodging;
-  debugger;
-
-  let detailParagraph = null;
-  // No tentative assignment for this user group
-  if (roomNumber == null) {
-    return (
-      <div>
-        <BookOnline guestsAttending={guestsAttending}/>
-        {tier > 1 && requestedLodgingDays > 0 && <OtherLodgingOptions />}
-      </div>
-    );
-  }
-
-  // At least one guest is coming
-  if (requestedLodgingDays.length === 0) {
-    logTentativeAssignmentException({ userGroupId, roomNumber })
-    detailParagraph = (
-      <p className="error">
-        NOTE: We have saved a room for you, but you are not requesting accommodations for
-        any of the nights. Please modify your RSVP if you'd like to keep the below room.
-      </p>
-    );
-  } else if (guestsAttending.length === 0) {
-    logTentativeAssignmentException({ userGroupId, roomNumber })
-    detailParagraph = (
-      <p className="error">
-        NOTE: We have saved a room for you, but nobody in your party has confirmed attendance.
-        Please modify your RSVP if you'd like to keep the below room.
-      </p>
-    );
-  } else {
-    detailParagraph = (
-      <p>
-        There's limited on-site accommodation, but we've blocked a room with your name on it!
-        (Please confirm and coordinate wih your roomies.)
-      </p>
-    );
-  }
-
-  const roomiesList = (roomies) => {
-    return (
-      <ol>
-        {
-          roomies.map((roomie) => {
-            const { first_name: firstName, last_name: lastName } = roomie;
-            return <li key={firstName}>{firstName} {lastName}</li>;
-          })
-        }
-      </ol>
-    );
-  }
-  return (
-    <div >
-      {detailParagraph}
-      <ul className="space-top-2 space-4 text-center">
-        <li><strong>Room number</strong>: {roomNumber}</li>
-        <li><strong>Room type</strong>: {roomType}</li>
-        <li><strong>Number of beds</strong> {numBeds}</li>
-        <li><strong>Max occupancy:</strong> {maxOccupancy}</li>
-        <li><strong>Roomies:</strong>{roomiesList(roomies)}</li>
-      </ul>
-      <p>
-        You will provide your credit card to pay for the room when you arrive. Excited to have you!
-      </p>
-    </div>
-  );
-}
-
-export default function LodgingDetails({ guestsAttending, lodging, requestedLodgingDays, userGroup }) {
   const { tier, id } = userGroup;
   const { room_number: roomNumber } = lodging;
   const areGuestsAttending = guestsAttending.length > 0;
@@ -180,6 +77,7 @@ export default function LodgingDetails({ guestsAttending, lodging, requestedLodg
         lodging={lodging}
         requestedLodgingDays={requestedLodgingDays}
         guestsAttending={guestsAttending}
+        guestsNotAttending={guestsNotAttending}
         userGroupId={id}
         tier={tier}
       />
@@ -189,8 +87,8 @@ export default function LodgingDetails({ guestsAttending, lodging, requestedLodg
 
 LodgingDetails.propTypes = {
   guestsAttending: PropTypes.array.isRequired,
+  guestsNotAttending: PropTypes.array.isRequired,
   lodging: PropTypes.object.isRequired,
   requestedLodgingDays: PropTypes.array.isRequired,
   userGroup: PropTypes.object.isRequired,
 };
-
