@@ -115,7 +115,8 @@ export default function TentativeRoomAssignment({
     }
     detailParagraph = (
       <p>
-        There’s limited on-site accommodation, but we’ve blocked a room with your name on it!&nbsp;
+        There’s limited on-site accommodation, but as close friends and family of Jessica and Anh,
+        we’ve blocked a room with your name on it!&nbsp;
         {leaderWillBookText} ({roomNumber}).
         You may extend your check-in and check-out dates.
         Please confirm and coordinate with your roomies if you have changes.

@@ -15,15 +15,7 @@ function LodgingDirections({ tier, guestsAttending }) {
         you (exclusive to wedding rehearsal group).
       </p>
     );
-  } else if (tier === 2) {
-    details = (
-      <p>
-        As close friends and family of Jessica and Anh, you get high priority for on-site lodging
-        because we want to spend time with you! There are a <strong>limited number of rooms at
-        Chalet View Lodge</strong>, so make sure to reserve yours soon!
-      </p>
-    );
-  } else {
+  } else if (tier >= 3) {
     details = (
       <p>
         On-site acommodations are limited so only reserve what your party needs.
@@ -66,7 +58,7 @@ export default function LodgingDetails({
 
   return (
     <div className="lodging-details-container">
-      <h2 className="text-center space-2">LODGING DETAILS</h2>
+      <h2 className="text-center space-2">CHALET VIEW LODGE ROOM DETAILS</h2>
       {guestsAttending.length > 0 &&
         <LodgingDirections
           guestsAttending={guestsAttending}
