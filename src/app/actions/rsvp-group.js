@@ -20,11 +20,12 @@ export const getRsvpGroup = () => {
   };
 };
 
-export const getSuccessRsvpGroup = ({ user_group, users }) => {
+export const getSuccessRsvpGroup = ({ user_group, users, lodging }) => {
   return {
     type: GET_SUCCESS_RSVP_GROUP,
     userGroup: user_group,
     users,
+    lodging,
   };
 };
 
@@ -34,11 +35,12 @@ export const postRsvpGroup = () => {
   };
 };
 
-export const postSuccessRsvpGroup = ({ user_group, users }) => {
+export const postSuccessRsvpGroup = ({ user_group, users, lodging }) => {
   return {
     type: POST_SUCCESS_RSVP_GROUP,
     userGroup: user_group,
     users,
+    lodging,
   };
 };
 

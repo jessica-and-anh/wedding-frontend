@@ -16,7 +16,7 @@ export const showRsvpPasscodeModal = () => {
   return showModal(passcodeModalProps);
 };
 
-export const showRsvpContentModal = ({ userGroup, users }) => {
+export const showRsvpContentModal = ({ userGroup, users, lodging }) => {
   const rsvpModalProps = {
     modalType: 'rsvp',
     modalProps: {
@@ -24,6 +24,7 @@ export const showRsvpContentModal = ({ userGroup, users }) => {
       content: <RsvpContent />,
       initialUserGroup: Object.assign({}, userGroup),
       initialUsers: Array.from(users),
+      initialLodging: Object.assign({}, lodging),
     },
   };
 

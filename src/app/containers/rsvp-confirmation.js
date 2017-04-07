@@ -8,12 +8,14 @@ const mapStateToProps = (state, routerProps) => {
   const {
     userGroup,
     users,
+    lodging,
   } = state.rsvp;
 
   return {
     code: routerProps.params.id,
     userGroup,
     users,
+    lodging,
   };
 };
 

@@ -117,6 +117,17 @@ hr.attendee-hr {
   margin-left: -71px;
 }
 
+.lodging-details-container {
+  position: relative;
+  width: 50%;
+  left: 25%;
+}
+
+.error-text {
+  color: #D50000;
+  text-decoration: line-through;
+}
+
 @media (max-width: 1224px) {
   .rsvp-confirmation__header {
     width: 100%;
@@ -150,5 +161,10 @@ hr.attendee-hr {
 
   .lodging-nights {
     text-align: center;
+  }
+
+  .lodging-details-container {
+    width: 100%;
+    left: 0;
   }
 }
