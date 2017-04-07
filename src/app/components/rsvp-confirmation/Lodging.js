@@ -55,7 +55,7 @@ export default function Lodging({
 
   return (
     <div className="rsvp-lodging">
-      <h2 className="space-2">REQUESTED ACCOMODATIONS</h2>
+      <h2 className="space-2">REQUESTED ACCOMMODATIONS</h2>
       <h1 className="lodging-nights space-3">{requestedLodgingDays.length} {nights}</h1>
       <Calendars
         lodgingDays={lodgingDays}
