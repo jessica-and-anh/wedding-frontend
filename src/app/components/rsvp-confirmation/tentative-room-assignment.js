@@ -108,8 +108,8 @@ export default function TentativeRoomAssignment({
       leaderWillBookText = (
         <span>
           <strong>{leader_user.first_name},
-          please call in <a href="tel:+15308325528" className="styled-link">(530) 832-5528</a>&nbsp;
-          to book your group's reserved room</strong>
+          please call <a href="tel:+15308325528" className="styled-link">(530) 832-5528</a>&nbsp;
+          to book your group’s reserved room</strong>
         </span>
       );
     }
@@ -144,18 +144,32 @@ export default function TentativeRoomAssignment({
     );
   }
 
+  const tableData = [
+    { title: 'Room leader', value: `${leader_user.first_name} ${leader_user.last_name}` },
+    { title: 'Room number', value: roomNumber },
+    { title: 'Room type', value: roomType },
+    { title: 'Number of beds', value: numBeds },
+    { title: 'Max occupancy', value: maxOccupancy },
+    { title: 'Roomies', value: roomiesList(roomies, guestsNotAttendingIds)}
+  ];
 
   return (
     <div >
       {detailParagraph}
-      <ul className="space-top-2 space-4 text-center">
-        <li><strong>Room leader:</strong> {leader_user.first_name} {leader_user.last_name}</li>
-        <li><strong>Room number</strong>: {roomNumber}</li>
-        <li><strong>Room type</strong>: {roomType}</li>
-        <li><strong>Number of beds</strong> {numBeds}</li>
-        <li><strong>Max occupancy:</strong> {maxOccupancy}</li>
-        <li><strong>Roomies:</strong>{roomiesList(roomies, guestsNotAttendingIds)}</li>
-      </ul>
+      <table className="space-top-2 space-4 centering-container">
+        <tbody>
+          {
+            tableData.map((row) => {
+              return (
+                <tr key={row.title}>
+                  <td className="table-spacing align-right"><strong>{row.title}</strong></td>
+                  <td className="table-spacing align-left">{row.value}</td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
       <p className="text-center">
          Excited to celebrate with you!
       </p>
