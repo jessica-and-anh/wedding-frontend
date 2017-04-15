@@ -11,7 +11,7 @@ import MediaQuery from 'react-responsive';
 
 import Navigation from './app/components/nav';
 import Dialog from './app/containers/dialog';
-import Homepage from './app/components/Homepage';
+import HomepageContainer from './app/containers/homepage-container';
 import RsvpConfirmation from './app/containers/rsvp-confirmation';
 import Generic404 from './app/components/generic-404';
 
@@ -61,7 +61,7 @@ const Application = React.createClass({
 ReactDOM.render(
   <Router history={browserHistory} onUpdate={logPageView}>
     <Route path="/" component={Application}>
-      <IndexRoute component={Homepage} />
+      <IndexRoute component={HomepageContainer} />
       <Route path="rsvp-confirmation" component={RsvpConfirmation} />
       <Route path="rsvp-confirmation/:id" component={RsvpConfirmation} />
       <Route path='/404' component={Generic404} />

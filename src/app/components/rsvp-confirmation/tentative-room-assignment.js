@@ -121,7 +121,7 @@ export default function TentativeRoomAssignment({
         You may extend your check-in and check-out dates.
         Please confirm and coordinate with your roomies if you have changes.
         {guestsNotAttendingIds.length > 0 &&
-          <strong>Heads up - looks like some of your roomies are not attending.</strong>
+          <strong> Heads up - looks like some of your roomies are not attending.</strong>
         }
       </p>
     );
