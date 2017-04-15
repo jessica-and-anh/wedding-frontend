@@ -117,10 +117,22 @@ hr.attendee-hr {
   margin-left: -71px;
 }
 
-.lodging-details-container {
+.centering-container {
   position: relative;
   width: 50%;
   left: 25%;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.table-spacing {
+  padding: 5px;
 }
 
 .error-text {
@@ -163,7 +175,7 @@ hr.attendee-hr {
     text-align: center;
   }
 
-  .lodging-details-container {
+  .centering-container {
     width: 100%;
     left: 0;
   }

@@ -57,7 +57,7 @@ export default function LodgingDetails({
   }
 
   return (
-    <div className="lodging-details-container">
+    <div className="centering-container">
       <h2 className="text-center space-2">CHALET VIEW LODGE ROOM DETAILS</h2>
       {guestsAttending.length > 0 &&
         <LodgingDirections
