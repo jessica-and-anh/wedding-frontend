@@ -15,8 +15,20 @@ import DayOf from '../components/day-of';
 import Footer from '../components/footer';
 
 const Element = Scroll.Element;
+const RSVP_CODE_LENGTH = 6;
 
 class Homepage extends Component {
+
+  // Direct link toe RSVP modal will open up the modal with the fetched info and skip the
+  // passcode step
+  componentWillMount() {
+    const { onLoadWithRsvpCode, location } = this.props;
+    const { rsvpCode } = location.query;
+    if (rsvpCode && rsvpCode.length === RSVP_CODE_LENGTH) {
+      onLoadWithRsvpCode(rsvpCode.toUpperCase());
+    }
+  }
+
   render() {
     return (
       <div>
