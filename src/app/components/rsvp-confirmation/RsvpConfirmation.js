@@ -62,6 +62,7 @@ export default class RsvpConfirmation extends Component {
     };
 
     const requestedLodgingDays = _.values(lodgingDays).filter((day) => { return day });
+    const isRequestingLodging = requestedLodgingDays > 0;
 
     const buttonStyle = {
       paddingLeft: '10px',
@@ -87,12 +88,13 @@ export default class RsvpConfirmation extends Component {
                   users={guestsNotAttending}
                   hasDivider
                 />
-                {requestedLodgingDays.length > 0 && guestsAttending.length === 0 &&
+                {isRequestingLodging && !isAnyoneAttending &&
                   <p className="error">
                     You have requested lodging days, but no confirmed attendees. Please tell us who is joining.
                   </p>
                 }
               </div>
+              {(isRequestingLodging || isAnyoneAttending) &&
                 <Lodging
                   lodgingDays={lodgingDays}
                   requestedLodgingDays={requestedLodgingDays}
@@ -100,6 +102,7 @@ export default class RsvpConfirmation extends Component {
                   lodging={lodging}
                   guestsAttending={guestsAttending}
                 />
+              }
             </div>
             <div>
               <LodgingDetails
