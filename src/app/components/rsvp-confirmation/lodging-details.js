@@ -19,8 +19,8 @@ function LodgingDirections({ tier, guestsAttending }) {
     details = (
       <p>
         On-site acommodations are limited so only reserve what your party needs. There is not enough
-        room for all guests to be able to stay at the venue’s lodging. Please book soon and be mindful
-        of other families when choosing your room, thanks!
+        room for all guests to be able to stay at the venue’s lodging. Please book soon as it is a
+        first come, first serve basis and be mindful of other families when choosing your room, thanks!
       </p>
     );
   }
