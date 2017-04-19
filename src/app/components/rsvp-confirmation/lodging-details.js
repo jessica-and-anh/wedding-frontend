@@ -15,10 +15,12 @@ function LodgingDirections({ tier, guestsAttending }) {
         you (exclusive to wedding rehearsal group).
       </p>
     );
-  } else if (tier >= 3) {
+  } else if (tier >= 2) {
     details = (
       <p>
-        On-site acommodations are limited so only reserve what your party needs.
+        On-site acommodations are limited so only reserve what your party needs. There is not enough
+        room for all guests to be able to stay at the venue’s lodging. Please book soon and be mindful
+        of other families when choosing your room, thanks!
       </p>
     );
   }
